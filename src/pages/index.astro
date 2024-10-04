@@ -6,6 +6,9 @@ import StackCard from "@components/StackCard.astro"
 import { SITE, SOCIALS } from "@consts"
 import TwinklingStars from "@components/TwinklingStars.astro"
 import MeteorShower from "@components/MeteorShower.astro"
+import type {Texto} from "../types/strapi/texto"
+import {marked} from "marked"
+import { Image } from "astro:assets"
 
 const posts = (await getCollection("blog"))
   .filter(post => !post.data.draft)
@@ -39,6 +42,21 @@ const stack = [
     href: "https://tailwindcss.com" 
   },
 ]
+
+const textResp : {data: Texto[]} = await fetch('https://strapi-test-production-0135.up.railway.app/api/textos', {
+  headers: {
+    'Authorization': `Bearer ${import.meta.env.STRAPI_API_TOKEN}`
+  }
+}).then(res => res.json())
+
+const aboutMeText = textResp.data.find(({ubicacion}) => ubicacion === 'sobre_mi_texto')!
+const parsed = marked.parse(aboutMeText?.contenido)
+
+const {data} = await fetch('https://strapi-test-production-0135.up.railway.app/api/imagens?populate=archivo', {
+  headers: {
+    'Authorization': `Bearer ${import.meta.env.STRAPI_API_TOKEN}`
+  }
+}).then(res => res.json())
 ---
 
 <PageLayout title="Home" description={SITE.DESCRIPTION}>
@@ -106,14 +124,8 @@ const stack = [
 
       <!-- About Section -->
       <section class="animate">
-        <article>
-          <p>I am a <b><i>software engineer</i></b>, <b><i>ui/ux designer</i></b>, <b><i>product planner</i></b>, <b><i>mentor</i></b>, <b><i>student</i></b>, <b><i>minimalist</i></b>, <b><i>eternal optimist</i></b>, <b><i>crypto enthusiast</i></b> and <b><i>sarcasm connoisseur</i></b>.</p>
-          <p>I love to both build and break things. I am motivated by challenging projects with self-guided research and dynamic problem solving. My true passion is crafting creative front end designs with unique takes on color, typography and motion.</p>
-          <p>During my career</p>
-          <p>I have built products ranging from marketing and ecommerce websites to complex enterprise apps with focus on delivering fast, elegant code along with delightful user interfaces.</p>
-          <p>Now</p>
-          <p>I currently work as a software engineer at StreamlineFS, where I do product planning, design and development.</p>
-        </article>
+        <article set:html={parsed} class="prose" />
+        <Image src={data.at(0).archivo.url} alt={data.at(0).archivo.alternativeText} width={300} height={300} class="rounded" />
       </section>
 
       <!-- Blog Preview Section -->
