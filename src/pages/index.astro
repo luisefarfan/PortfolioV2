@@ -137,7 +137,7 @@ const markedAboutContent = marked(aboutText.fields.content)
         <div data-contentful-entry-id={aboutText.sys.id} data-contentful-field-id="blocks">
           <article set:html={markedAboutContent} class="prose prose-img:w-[200px] prose-img:mx-0 prose-img:rounded" />
         </div>
-        <!-- <button id="editor-button" type="button">Open in editor</button> -->
+        <button id="editor-button" type="button" data-related-element-id={aboutText.sys.id}>Open in editor</button>
       </section>
 
       <!-- Blog Preview Section -->
@@ -242,11 +242,11 @@ const markedAboutContent = marked(aboutText.fields.content)
   </div>
 </PageLayout>
 
-<!-- <script>
+<script>
   import { ContentfulLivePreview } from "@contentful/live-preview"
   ContentfulLivePreview.init({ locale: 'en', enableInspectorMode: true, targetOrigin: 'https://app.contentful.com' });
 
   document.querySelector('#editor-button')?.addEventListener('click', async (e: any) => {
     ContentfulLivePreview.openEntryInEditor({entryId: e.target.dataset['related-element-id'], fieldId: 'blocks'})
   })
-</script> -->
+</script>
