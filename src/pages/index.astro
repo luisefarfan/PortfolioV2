@@ -6,9 +6,9 @@ import StackCard from "@components/StackCard.astro"
 import { SITE, SOCIALS } from "@consts"
 import TwinklingStars from "@components/TwinklingStars.astro"
 import MeteorShower from "@components/MeteorShower.astro"
-import type {Texto} from "../types/strapi/texto"
 import {marked} from "marked"
-import { Image } from "astro:assets"
+import { contentfulClient } from "@lib/contentful/client"
+import type { EntryFieldTypes, Entry } from "contentful"
 
 const posts = (await getCollection("blog"))
   .filter(post => !post.data.draft)
@@ -43,20 +43,30 @@ const stack = [
   },
 ]
 
-const textResp : {data: Texto[]} = await fetch('https://strapi-test-production-0135.up.railway.app/api/textos', {
-  headers: {
-    'Authorization': `Bearer ${import.meta.env.STRAPI_API_TOKEN}`
+interface Page extends Entry {
+  contentTypeId: 'page',
+  fields: {
+    entryTitle: EntryFieldTypes.Text;
+    slug: EntryFieldTypes.Text;
+    blocks: Text[],
   }
-}).then(res => res.json())
+}
 
-const aboutMeText = textResp.data.find(({ubicacion}) => ubicacion === 'sobre_mi_texto')!
-const parsed = marked.parse(aboutMeText?.contenido)
-
-const {data} = await fetch('https://strapi-test-production-0135.up.railway.app/api/imagens?populate=archivo', {
-  headers: {
-    'Authorization': `Bearer ${import.meta.env.STRAPI_API_TOKEN}`
+interface Text extends Entry {
+  contentTypeId: 'text',
+  fields: {
+    entryTitle: EntryFieldTypes.Text;
+    content: string;
   }
-}).then(res => res.json())
+}
+
+const {items: [page]} = await contentfulClient.getEntries<Page>({
+  content_type: 'page',
+  'fields.slug': Astro.url.pathname
+})
+
+const [welcomeText, nameText, aboutText]: Text[] = page.fields.blocks
+const markedAboutContent = marked(aboutText.fields.content)
 ---
 
 <PageLayout title="Home" description={SITE.DESCRIPTION}>
@@ -97,11 +107,11 @@ const {data} = await fetch('https://strapi-test-production-0135.up.railway.app/a
     <div class="animate absolute h-full w-full flex items-center justify-center">
       <div class='relative w-full h-full flex items-center justify-center'>
         <div class='p-5 text-center'>
-          <p class='animated text-lg md:text-xl lg:text-2xl font-semibold opacity-75'>
-            Hello, I am ...
+          <p class='animated text-lg md:text-xl lg:text-2xl font-semibold opacity-75' data-contentful-entry-id={welcomeText.sys.id} data-contentful-field-id="blocks">
+            {welcomeText.fields.content}
           </p>
-          <p class='animated text-2xl md:text-3xl lg:text-4xl font-bold uppercase text-black dark:text-white'>
-            Astro Sphere
+          <p class='animated text-2xl md:text-3xl lg:text-4xl font-bold uppercase text-black dark:text-white' data-contentful-entry-id={nameText.sys.id} data-contentful-field-id="blocks">
+            {nameText.fields.content}
           </p>
           <p class='animated text-sm md:text-base lg:text-lg opacity-75'>
             Currently designing products for humans.
@@ -124,8 +134,10 @@ const {data} = await fetch('https://strapi-test-production-0135.up.railway.app/a
 
       <!-- About Section -->
       <section class="animate">
-        <article set:html={parsed} class="prose" />
-        <Image src={data.at(0).archivo.url} alt={data.at(0).archivo.alternativeText} width={300} height={300} class="rounded" />
+        <div data-contentful-entry-id={aboutText.sys.id} data-contentful-field-id="blocks">
+          <article set:html={markedAboutContent} class="prose prose-img:w-[200px] prose-img:mx-0 prose-img:rounded" />
+        </div>
+        <!-- <button id="editor-button" type="button">Open in editor</button> -->
       </section>
 
       <!-- Blog Preview Section -->
@@ -229,3 +241,12 @@ const {data} = await fetch('https://strapi-test-production-0135.up.railway.app/a
     </div>
   </div>
 </PageLayout>
+
+<!-- <script>
+  import { ContentfulLivePreview } from "@contentful/live-preview"
+  ContentfulLivePreview.init({ locale: 'en', enableInspectorMode: true, targetOrigin: 'https://app.contentful.com' });
+
+  document.querySelector('#editor-button')?.addEventListener('click', async (e: any) => {
+    ContentfulLivePreview.openEntryInEditor({entryId: e.target.dataset['related-element-id'], fieldId: 'blocks'})
+  })
+</script> -->
