@@ -1,0 +1,23 @@
+---
+import { Image as AstroImage } from 'astro:assets';
+
+interface Props {
+  src: any;
+  height: number;
+  width: number;
+  alt: string;
+  className?: string;
+  loading?: 'eager' | 'lazy';
+}
+
+const { src, height, width, alt, className, loading } = Astro.props;
+---
+
+<AstroImage
+  {src}
+  {height}
+  {width}
+  {alt}
+  class={className}
+  loading={loading || 'eager'}
+/>

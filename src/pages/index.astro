@@ -1,8 +1,43 @@
 ---
+import { menuIds } from '@constants/content/home';
 import Layout from '@layouts/Layout.astro';
+import Image from '@components/Image.astro';
+import aboutMeImage from '@assets/about/aboutMeImage.jpg';
+import StrokeText from '@components/StrokeText.astro';
+import { aboutContent } from '@constants/content/about';
+import AboutIcon from '@components/svg/AboutIcon.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const { title1, title2, content } = aboutContent.en;
 ---
 
-<Layout />
+<Layout>
+  <section class="about-section" id={menuIds.option1}>
+    <div class="container">
+      <div
+        class="grid lg:grid-cols-2 grid-cols-1 items-center xl:gap-20 lg:gap-8 gap-8"
+      >
+        <Image
+          loading="lazy"
+          src={aboutMeImage}
+          width={1000}
+          height={1000}
+          alt="About me"
+          className="rounded-3xl"
+        />
+        <div class="flex flex-col justify-center">
+          <div class="flex flex-wrap items-center">
+            <h2>
+              <span class="color-blue">{title1}</span><StrokeText color={'blue'}
+                >{title2}</StrokeText
+              >
+            </h2>
+            <div>
+              <AboutIcon />
+            </div>
+          </div>
+          <p class="mt-10">{content}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
