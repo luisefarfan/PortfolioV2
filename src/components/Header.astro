@@ -1,23 +1,12 @@
 ---
 import StrokeText from '@components/StrokeText/index.astro';
-const activeSection = 'option1';
-const menuIds = {
-  option1: 'option1',
-  option2: 'option2',
-  option3: 'option3',
-  option4: 'option4',
-  option5: 'option5',
-};
+import { menuIds, homeContent } from '@constants/content/home';
+import Button from '@components/Button.astro';
+import MenuIcon from '@components/svg/MenuIcon.astro';
 
-const menu = {
-  option1: 'About',
-  option2: 'Projects',
-  option3: 'Contact',
-  option4: 'Skills',
-  option5: 'Languages',
-};
-
-const openMenu = false;
+const { menu, cv } = homeContent.en;
+const activeSection = menuIds.option1;
+const lang = 'en';
 ---
 
 <header class="header">
@@ -44,31 +33,45 @@ const openMenu = false;
     </ul>
   </div>
   <div class="lang-cv-container">
-    {
-      /* <Button href={`https://portfolio.luisefarfan.com/cv-${lang}.pdf`} text={cv} color="blue" class='w-fit mr-5' /> */
-    }
-    {/* TODO add again the CV based on the lang */}
-    <!-- <Button
-          href={`https://portfolio.luisefarfan.com/cv-en.pdf`}
-          text={cv}
-          color="blue"
-          class="w-fit mr-5"
-        />
-        <LanguageSelector /> -->
+    <Button
+      href={`https://portfolio.luisefarfan.com/cv-${lang}.pdf`}
+      color="blue"
+      className="w-fit mr-5">{cv}</Button
+    >
   </div>
-  <div class={`sm-menu-button ${openMenu && 'open'}`}>
-    <div class="sm-menu-button-line"></div>
-    <div class="sm-menu-button-line"></div>
-    <div class="sm-menu-button-line"></div>
+  <button class="sm-menu-button">
+    <MenuIcon />
+  </button>
+
+  <!-- Mobile menu -->
+  <div class="sm-header-menu">
+    <ul class="mb-10">
+      <li class={activeSection === menuIds.option1 ? 'active' : ''}>
+        {menu.option1}
+      </li>
+      <li class={activeSection === menuIds.option2 ? 'active' : ''}>
+        {menu.option2}
+      </li>
+      <li class={activeSection === menuIds.option3 ? 'active' : ''}>
+        {menu.option3}
+      </li>
+      <li class={activeSection === menuIds.option4 ? 'active' : ''}>
+        {menu.option4}
+      </li>
+      <li class={activeSection === menuIds.option5 ? 'active' : ''}>
+        {menu.option5}
+      </li>
+    </ul>
+    <div class="flex flex-col justify-around items-center mb-5">
+      <Button
+        href={`https://portfolio.luisefarfan.com/cv-${lang}.pdf`}
+        color="blue"
+        className="w-fit mr-5">{cv}</Button
+      >
+      <!-- <LanguageSelector /> -->
+    </div>
+    <!-- <ContactMenu fromMobile /> -->
   </div>
-  <!-- <MobileMenu
-        menu={menu}
-        cv={cv}
-        openMenu={openMenu}
-        activeSection={activeSection}
-        changeSection={changeSection}
-        lang={lang}
-      /> -->
 </header>
 
 <style>
@@ -155,33 +158,6 @@ const openMenu = false;
       height: 2rem;
       border: 0;
       background: transparent;
-
-      .sm-menu-button-line {
-        height: 2px;
-        width: 100%;
-        border-radius: 5px;
-        background-color: white;
-        transition: all 0.3s ease;
-        transform-origin: left;
-      }
-
-      .sm-menu-button-line:not(:last-child) {
-        margin-bottom: 0.98rem;
-      }
-    }
-
-    .sm-menu-button.open {
-      .sm-menu-button-line:first-child {
-        transform: rotate(45deg);
-      }
-
-      .sm-menu-button-line:nth-child(2) {
-        opacity: 0;
-      }
-
-      .sm-menu-button-line:last-child {
-        transform: rotate(-45deg);
-      }
     }
 
     .sm-header-menu {
@@ -225,3 +201,15 @@ const openMenu = false;
     }
   }
 </style>
+
+<script>
+  const menuButton = document.querySelector(
+    '.sm-menu-button'
+  ) as HTMLButtonElement;
+  const mobileMenu = document.querySelector(
+    '.sm-header-menu'
+  ) as HTMLDivElement;
+  menuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+</script>
