@@ -7,6 +7,10 @@
   --grey-blue-color: #6395B4;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 	body {
 		margin: 0;
@@ -21,9 +25,13 @@ html,
   font-family: 'Kumbh Sans';
 }
 
+.color-blue {
+  color: var(--blue-color)
+}
+
 .full-container {
   background-color: var(--dark-blue-color);
-  background-image: url(../assets/pages/About/bgAbout.svg), url(../assets/pages/Projects/background.svg);
+  background-image: url(/bgAbout.svg), url(/background.svg);
   background-position: top, bottom;
   background-repeat: no-repeat;
   -webkit-background-size: 100%;
@@ -36,5 +44,75 @@ html,
 .homepage {
   section:not(#home) {
     padding-top: 7rem;
+  }
+}
+
+.h1 {
+  font-size: 5rem;
+}
+
+.h2 {
+  font-size: 4rem;
+}
+
+.h3 {
+  font-size: 3rem;
+}
+
+.h4 {
+  font-size: 2rem;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .h1 {
+    font-size: 4.75rem;
+  }
+
+  .h2 {
+    font-size: 3.75rem;
+  }
+
+  .h3 {
+    font-size: 2.75rem;
+  }
+
+  .h4 {
+    font-size: 1.75rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .h1 {
+    font-size: 4.5rem;
+  }
+
+  .h2 {
+    font-size: 3.5rem;
+  }
+
+  .h3 {
+    font-size: 2.5rem;
+  }
+
+  .h4 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .h1 {
+    font-size: 4rem;
+  }
+
+  .h2 {
+    font-size: 3rem;
+  }
+
+  .h3 {
+    font-size: 2rem;
+  }
+
+  .h4 {
+    font-size: 1rem;
   }
 }
