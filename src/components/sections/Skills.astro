@@ -1,12 +1,13 @@
 ---
 import { skillsContent } from '@constants/content/skills';
+import { menuIds } from '@constants/content/home';
 import StrokeText from '@components/StrokeText.astro';
 
 const { title1, title2, text, techSkills, softSkills, techTitle, softTitle } =
   skillsContent.en;
 ---
 
-<section class="skills-section">
+<section class="skills-section" id={menuIds.option4}>
   <div class="container">
     <div class="text-center flex flex-col items-center">
       <h2 class="two-line-title text-5xl">

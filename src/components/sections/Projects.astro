@@ -1,5 +1,6 @@
 ---
 import { projectsContent } from '@constants/content/projects';
+import { menuIds } from '@constants/content/home';
 import StrokeText from '@components/StrokeText.astro';
 import CodingIcon from '@components/svg/CodingIcon.astro';
 import Image from '@components/Image.astro';
@@ -8,7 +9,7 @@ import Button from '@components/Button.astro';
 const { title1, title2, text, projects, seeMore } = projectsContent.en;
 ---
 
-<section class="projects-section">
+<section class="projects-section" id={menuIds.option3}>
   <div class="container">
     <div class="flex justify-between">
       <div>
