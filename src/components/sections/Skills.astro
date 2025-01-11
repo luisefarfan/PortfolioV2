@@ -2,6 +2,7 @@
 import { skillsContent } from '@constants/content/skills';
 import { menuIds } from '@constants/content/home';
 import StrokeText from '@components/StrokeText.astro';
+import Title from '@components/Title.astro';
 
 const { title1, title2, text, techSkills, softSkills, techTitle, softTitle } =
   skillsContent.en;
@@ -10,15 +11,15 @@ const { title1, title2, text, techSkills, softSkills, techTitle, softTitle } =
 <section class="skills-section" id={menuIds.option4}>
   <div class="container">
     <div class="text-center flex flex-col items-center">
-      <h2 class="two-line-title text-6xl">
+      <Title level="h2" class="two-line-title">
         <span class="color-blue">{title1}</span><br />
         <StrokeText color={'blue'}>{title2}</StrokeText>
-      </h2>
+      </Title>
       <p class="mt-10 lg:w-3/4">{text}</p>
     </div>
 
     <div class="mt-20">
-      <h3 class="mb-8 text-4xl">{techTitle}</h3>
+      <Title level="h3" class="mb-8">{techTitle}</Title>
       <div class="grid lg:grid-cols-6 md:grid-cols-4 grid-cols-2 gap-4">
         {
           techSkills.map(({ title, description }) => (
@@ -32,7 +33,7 @@ const { title1, title2, text, techSkills, softSkills, techTitle, softTitle } =
         }
       </div>
 
-      <h3 class="mb-8 mt-20 text-4xl">{softTitle}</h3>
+      <Title level="h3" class="mb-8 mt-20">{softTitle}</Title>
       <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
         {
           softSkills.map(({ title, description }) => (
@@ -52,22 +53,6 @@ const { title1, title2, text, techSkills, softSkills, techTitle, softTitle } =
 <style>
   .skills-section {
     padding-bottom: 5rem;
-  }
-
-  .two-line-title {
-    line-height: 5rem;
-
-    span:last-child {
-      margin-left: 15rem;
-    }
-  }
-
-  @media only screen and (max-width: 1023px) {
-    .two-line-title {
-      span:last-child {
-        margin-left: 0;
-      }
-    }
   }
 
   .carousel-item {

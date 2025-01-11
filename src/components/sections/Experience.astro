@@ -3,6 +3,7 @@ import { menuIds } from '@constants/content/home';
 import StrokeText from '@components/StrokeText.astro';
 import { experienceContent } from '@constants/content/experiences';
 import ExperienceIcon from '@components/svg/ExperienceIcon.astro';
+import Title from '@components/Title.astro';
 
 const { title1, title2, text, experiences } = experienceContent.en;
 ---
@@ -10,11 +11,11 @@ const { title1, title2, text, experiences } = experienceContent.en;
 <section id={menuIds.option2} class="experience-section">
   <div class="container">
     <div>
-      <h2 class="flex flex-wrap text-6xl mb-4">
+      <Title level="h2" class="flex flex-wrap mb-4">
         <span class="color-blue">{title1}</span><StrokeText color={'blue'}
           >{title2}</StrokeText
         >
-      </h2>
+      </Title>
       <p class="lg:w-8/12 w-10/12">{text}</p>
     </div>
   </div>
@@ -28,7 +29,9 @@ const { title1, title2, text, experiences } = experienceContent.en;
         {
           experiences.map(({ company, description }) => (
             <div class="experience-item-container mb-5">
-              <h4 class="color-blue">{company}</h4>
+              <Title level="h4" class="color-blue">
+                {company}
+              </Title>
               <p>{description}</p>
             </div>
           ))
