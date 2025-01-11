@@ -1,3 +1,25 @@
 ---
+import ContactMenu from '@components/ContactMenu.astro';
+import StrokeText from '@components/StrokeText.astro';
+import { contactContent } from '@constants/content/contact';
 
+const { title1, title2 } = contactContent.en;
 ---
+
+<section class="contact-section">
+  <div class="container">
+    <div class="text-center flex justify-center">
+      <h2 class="two-line-title text-5xl">
+        <span class="color-blue">{title1}</span><br />
+        <StrokeText color={'blue'}>{title2}</StrokeText>
+      </h2>
+    </div>
+    <ContactMenu fromContact />
+  </div>
+</section>
+
+<style>
+  .contact-section {
+    padding-bottom: 9rem;
+  }
+</style>

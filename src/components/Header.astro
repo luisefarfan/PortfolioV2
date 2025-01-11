@@ -3,6 +3,7 @@ import StrokeText from '@components/StrokeText.astro';
 import { menuIds, homeContent } from '@constants/content/home';
 import Button from '@components/Button.astro';
 import MenuIcon from '@components/svg/MenuIcon.astro';
+import ContactMenu from './ContactMenu.astro';
 
 const { menu, cv } = homeContent.en;
 const activeSection = menuIds.option1;
@@ -70,7 +71,7 @@ const lang = 'en';
       >
       <!-- <LanguageSelector /> -->
     </div>
-    <!-- <ContactMenu fromMobile /> -->
+    <ContactMenu fromMobile />
   </div>
 </header>
 
