@@ -9,7 +9,17 @@ interface Props {
 const { href, color, type = 'button', className } = Astro.props;
 ---
 
-<button type={type} class={`btn ${color} ${className}`}><slot /></button>
+{
+  href ? (
+    <a {href} class={`btn ${color} ${className}`}>
+      <slot />
+    </a>
+  ) : (
+    <button type={type} class={`btn ${color} ${className}`}>
+      <slot />
+    </button>
+  )
+}
 
 <style>
   .btn {
