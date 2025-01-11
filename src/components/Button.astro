@@ -3,10 +3,10 @@ interface Props {
   href?: string;
   color?: string;
   type?: 'button' | 'submit' | 'reset';
-  className?: string;
+  class?: string;
 }
 
-const { href, color, type = 'button', className } = Astro.props;
+const { href, color, type = 'button', class: className } = Astro.props;
 ---
 
 {

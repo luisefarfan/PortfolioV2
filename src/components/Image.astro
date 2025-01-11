@@ -6,11 +6,11 @@ interface Props {
   height: number;
   width: number;
   alt: string;
-  className?: string;
+  class?: string;
   loading?: 'eager' | 'lazy';
 }
 
-const { src, height, width, alt, className, loading } = Astro.props;
+const { src, height, width, alt, class: className, loading } = Astro.props;
 ---
 
 <AstroImage
