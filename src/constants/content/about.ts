@@ -2,11 +2,19 @@ export const aboutContent = {
   en: {
     title1: 'About',
     title2: 'Me',
-    content: 'I am a highly skilled software engineer with more than 4 years of experience as a full-stack developer, specializing in Javascript frameworks and libraries like React, NodeJS, and NextJS. I am passionate about crafting clean, efficient, and scalable solutions and have gained valuable experience in developing complex applications, implementing secure APIs, and optimizing performance for high-traffic websites. Additionally, I have experience conducting code reviews and mentoring other developers. I also deeply understand the business and how technology can be leveraged to create the most value. I am eager to leverage my skills and experience to help teams build innovative solutions and drive business growth.'
+    content: `I’m a tech lead and full-stack software engineer with over 5 years of experience building scalable, high-impact web applications. I specialize in JavaScript frameworks like React, Node.js, and Next.js, and I have a strong track record of delivering clean, efficient, and secure solutions across complex systems.
+
+In my current role, I lead development teams, oversee architecture decisions, conduct code reviews, and mentor developers to ensure both technical excellence and team growth. I collaborate closely with stakeholders to align technology with business goals, driving measurable value through smart, scalable solutions.
+
+Whether building high-performance APIs, optimizing user experiences for large-scale platforms, or leading cross-functional teams, I bring a balance of hands-on technical expertise and a strong product mindset. I'm always looking for opportunities to help teams innovate and turn ideas into reliable, maintainable software.`
   },
   es: {
     title1: 'Sobre',
     title2: 'Mi',
-    content: 'Soy un ingeniero de software altamente capacitado con más de 4 años de experiencia como desarrollador full-stack, especializado en frameworks y bibliotecas de Javascript como React, NodeJS y NextJS. Me apasiona crear soluciones limpias, eficientes y escalables, y he adquirido una valiosa experiencia en el desarrollo de aplicaciones complejas, la implementación de APIs seguras y la optimización del rendimiento para sitios web de alto tráfico. Además, tengo experiencia en la realización de revisiones de código y en la mentoría de otros desarrolladores. También comprendo profundamente el negocio y cómo la tecnología puede ser aprovechada para crear el máximo valor. Estoy ansioso por aprovechar mis habilidades y experiencia para ayudar a los equipos a construir soluciones innovadoras y impulsar el crecimiento del negocio.'
+    content: `Soy líder técnico y desarrollador full-stack con más de 5 años de experiencia creando aplicaciones web escalables y de alto impacto. Me especializo en frameworks de JavaScript como React, Node.js y Next.js, con un historial comprobado en entregar soluciones limpias, eficientes y seguras en sistemas complejos. 
+
+En mi rol actual, lidero equipos de desarrollo, tomo decisiones de arquitectura, reviso código y doy mentoría a otros desarrolladores para garantizar calidad técnica y crecimiento del equipo. Estoy en constante comunicación con las partes interesadas para alinear la tecnología con los objetivos del negocio, generando valor real a través de soluciones escalables e inteligentes.  
+
+Ya sea construyendo APIs de alto rendimiento, mejorando la experiencia de usuario en plataformas de gran escala o liderando equipos multidisciplinarios, combino mi experiencia técnica con una fuerte visión de producto. Siempre busco oportunidades para innovar y convertir ideas en software confiable y mantenible.`
   }
 }
