@@ -1,10 +1,27 @@
-:root {
+@import 'tailwindcss';
+
+@theme {
   --white-color: #E0EDF5;
   --blue-color: #00F3F7;
   --dark-blue-color: #0D222D;
   --darkest-blue-color: #08171E;
   --secondary-dark-blue-color: #041219;
   --grey-blue-color: #6395B4;
+}
+
+@utility container {
+  padding-inline: 2rem;
+	margin-inline: auto;
+
+	@variant sm {
+		padding-inline: 2rem;
+	}
+	@variant lg {
+		padding-inline: 5rem;
+	}
+	@variant xl {
+		padding-inline: 6rem;
+	}
 }
 
 html {
@@ -21,7 +38,6 @@ html,
 * {
   box-sizing: border-box;
   color: var(--white-color);
-  margin: 0;
   font-family: 'Kumbh Sans';
 }
 
@@ -64,10 +80,10 @@ html,
     }
   }
 
-  @media only screen and (max-width: 1023px) {
-    .two-line-title {
-      span:last-child {
-        margin-left: 0;
-      }
+@media only screen and (max-width: 1023px) {
+  .two-line-title {
+    span:last-child {
+      margin-left: 0;
     }
   }
+}
