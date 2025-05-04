@@ -1,12 +1,12 @@
 @import 'tailwindcss';
 
 @theme {
-  --white-color: #E0EDF5;
-  --blue-color: #00F3F7;
-  --dark-blue-color: #0D222D;
-  --darkest-blue-color: #08171E;
-  --secondary-dark-blue-color: #041219;
-  --grey-blue-color: #6395B4;
+  --color-white: #E0EDF5;
+  --color-blue: #00F3F7;
+  --color-dark-blue: #0D222D;
+  --color-darkest-blue: #08171E;
+  --color-secondary-dark-blue: #041219;
+  --color-grey-blue: #6395B4;
 }
 
 @utility container {
@@ -37,16 +37,16 @@ html,
 
 * {
   box-sizing: border-box;
-  color: var(--white-color);
+  color: var(--color-white);
   font-family: 'Kumbh Sans';
 }
 
 .color-blue {
-  color: var(--blue-color)
+  color: var(--color-blue)
 }
 
 .full-container {
-  background-color: var(--dark-blue-color);
+  background-color: var(--color-dark-blue);
   background-image: url(/bgAbout.svg), url(/background.svg);
   background-position: top, bottom;
   background-repeat: no-repeat;
