@@ -1,0 +1,14 @@
+---
+interface Props {
+  id: string;
+  text: string;
+}
+
+const { id, text } = Astro.props;
+---
+
+<li
+  class="cursor-pointer border-b-dark-blue border-b-1 [.active]:text-blue [.active]:border-b-blue hover:text-blue hover:border-b-blue [.active]:scale-[1.02] hover:scale-[1.02] transition-all duration-200"
+>
+  <a href={`#${id}`}>{text}</a>
+</li>
