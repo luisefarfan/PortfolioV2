@@ -10,8 +10,6 @@ const localeName = {
 };
 ---
 
-<Button
-  href={getRelativeLocaleUrl(otherLocale, '/')}
-  color="blue"
-  class="w-fit mr-5">{localeName[otherLocale]}</Button
+<Button href={getRelativeLocaleUrl(otherLocale)} color="blue" class="w-fit"
+  >{localeName[otherLocale]}</Button
 >

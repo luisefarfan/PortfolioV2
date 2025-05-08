@@ -53,11 +53,11 @@ const lang = 'en';
       <MobileHeaderLink id={menuIds.option4} text={menu.option4} />
       <MobileHeaderLink id={menuIds.option5} text={menu.option5} />
     </ul>
-    <div class="flex flex-col justify-around items-center mb-5">
+    <div class="flex flex-col gap-3 justify-around items-center mb-5">
       <Button
         href={`https://portfolio.luisefarfan.com/cv-${lang}.pdf`}
         color="blue"
-        class="w-fit mr-5">{cv}</Button
+        class="w-fit">{cv}</Button
       >
 
       <LanguageSelector />
