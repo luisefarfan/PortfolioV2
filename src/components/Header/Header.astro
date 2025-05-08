@@ -67,19 +67,22 @@ const lang = 'en';
 </header>
 
 <script>
-  const menuButton = document.querySelector(
-    '.sm-menu-button'
-  ) as HTMLButtonElement;
-  const mobileMenu = document.querySelector(
-    '.sm-header-menu'
-  ) as HTMLDivElement;
-  menuButton.addEventListener('click', () => {
-    mobileMenu.classList.toggle('open');
+  document.addEventListener('astro:page-load', () => {
+    const menuButton = document.querySelector(
+      '.sm-menu-button'
+    ) as HTMLButtonElement;
+    const mobileMenu = document.querySelector(
+      '.sm-header-menu'
+    ) as HTMLDivElement;
+
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
   });
 </script>
 
-<script define:vars={{ menuIds }}>
-  function updateActiveLinks() {
+<script define:vars={{ menuIds }} is:inline data-astro-rerun>
+  const updateActiveLinks = () => {
     let activeSection = window.location.hash.replace('#', '');
 
     if (!activeSection) {
@@ -96,11 +99,13 @@ const lang = 'en';
         link.parentElement?.classList.remove('active');
       }
     });
-  }
+  };
 
   // Update links when the page loads
   updateActiveLinks();
 
   // Update links when the hash changes
-  window.addEventListener('hashchange', updateActiveLinks);
+  document.addEventListener('scrollToSection', () => {
+    updateActiveLinks();
+  });
 </script>

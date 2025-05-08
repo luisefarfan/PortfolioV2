@@ -12,3 +12,20 @@ const { id, text } = Astro.props;
 >
   <a href={`#${id}`}>{text}</a>
 </li>
+
+<script is:inline define:vars={{ id }} data-astro-rerun>
+  const anchorTag = document.querySelector(`a[href="#${id}"]`);
+
+  anchorTag.addEventListener('click', (event) => {
+    event.preventDefault();
+    const targetSection = document.querySelector(`#${id}`);
+    if (targetSection) {
+      const customEvent = new CustomEvent('scrollToSection', {
+        detail: { id },
+      });
+      history.pushState(null, '', `#${id}`);
+      document.dispatchEvent(customEvent);
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+</script>
