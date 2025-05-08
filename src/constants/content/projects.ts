@@ -107,7 +107,7 @@ export const projectsContent = {
         url: 'https://www.telus.com/support',
         img: telussupportImg,
         // compressedImg: project1ImgCompressed
-      }, ,
+      },
       {
         title: 'Koleyo',
         subtitle: '',

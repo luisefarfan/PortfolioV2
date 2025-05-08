@@ -5,7 +5,8 @@ import { experienceContent } from '@constants/content/experiences';
 import ExperienceIcon from '@components/svg/ExperienceIcon.astro';
 import Title from '@components/Title.astro';
 
-const { title1, title2, text, experiences } = experienceContent.en;
+const { title1, title2, text, experiences } =
+  experienceContent[Astro.currentLocale as 'en' | 'es'];
 ---
 
 <section id={menuIds.option2} class="experience-section">

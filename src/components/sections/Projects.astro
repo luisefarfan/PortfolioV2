@@ -7,7 +7,8 @@ import Image from '@components/Image.astro';
 import Button from '@components/Button.astro';
 import Title from '@components/Title.astro';
 
-const { title1, title2, text, projects, seeMore } = projectsContent.en;
+const { title1, title2, text, projects, seeMore } =
+  projectsContent[Astro.currentLocale as 'en' | 'es'];
 ---
 
 <section class="projects-section" id={menuIds.option3}>

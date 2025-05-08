@@ -5,7 +5,7 @@ import StrokeText from '@components/StrokeText.astro';
 import Title from '@components/Title.astro';
 
 const { title1, title2, text, techSkills, softSkills, techTitle, softTitle } =
-  skillsContent.en;
+  skillsContent[Astro.currentLocale as 'en' | 'es'];
 ---
 
 <section class="skills-section" id={menuIds.option4}>

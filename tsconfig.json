@@ -10,7 +10,8 @@
       "@assets/*": ["src/assets/*"],
       "@content/*": ["src/content/*"],
       "@styles/*": ["src/styles/*"],
-      "@constants/*": ["src/constants/*"]
+      "@constants/*": ["src/constants/*"],
+      "@sections/*": ["src/sections/*"],
     }
   }
 }

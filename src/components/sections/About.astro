@@ -7,7 +7,8 @@ import AboutIcon from '@components/svg/AboutIcon.astro';
 import { aboutContent } from '@constants/content/about';
 import Title from '@components/Title.astro';
 
-const { title1, title2, content } = aboutContent.en;
+const { title1, title2, content } =
+  aboutContent[(Astro.currentLocale ?? 'en') as 'en' | 'es'];
 ---
 
 <section class="about-section" id={menuIds.option1}>
