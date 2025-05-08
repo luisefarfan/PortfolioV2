@@ -5,7 +5,6 @@ import Button from '@components/Button.astro';
 import MenuIcon from '@components/svg/MenuIcon.astro';
 import ContactMenu from '@components/ContactMenu.astro';
 import HeaderLink from './HeaderLink.astro';
-import MobileHeaderLink from './MobileHeaderLink.astro';
 import LanguageSelector from './LanguageSelector.astro';
 
 const { menu, cv } = homeContent[Astro.currentLocale as 'en' | 'es'];
@@ -47,11 +46,11 @@ const lang = 'en';
     class="xl:hidden block overflow-y-auto max-h-[80vh] absolute top-full bg-dark-blue transition-all duration-300 p-8 shadow-header w-full -left-full opacity-0 [.open]:left-0 [.open]:opacity-100 sm-header-menu"
   >
     <ul class="mb-10 flex flex-col list-none gap-4">
-      <MobileHeaderLink id={menuIds.option1} text={menu.option1} />
-      <MobileHeaderLink id={menuIds.option2} text={menu.option2} />
-      <MobileHeaderLink id={menuIds.option3} text={menu.option3} />
-      <MobileHeaderLink id={menuIds.option4} text={menu.option4} />
-      <MobileHeaderLink id={menuIds.option5} text={menu.option5} />
+      <HeaderLink isMobile id={menuIds.option1} text={menu.option1} />
+      <HeaderLink isMobile id={menuIds.option2} text={menu.option2} />
+      <HeaderLink isMobile id={menuIds.option3} text={menu.option3} />
+      <HeaderLink isMobile id={menuIds.option4} text={menu.option4} />
+      <HeaderLink isMobile id={menuIds.option5} text={menu.option5} />
     </ul>
     <div class="flex flex-col gap-3 justify-around items-center mb-5">
       <Button
