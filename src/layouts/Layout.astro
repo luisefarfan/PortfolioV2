@@ -1,8 +1,9 @@
 ---
-import '@styles/global.css';
-import '@assets/fonts/Kumb_Sans/stylesheet.css';
-import Header from '@components/Header/Header.astro';
 import { ClientRouter } from 'astro:transitions';
+import Header from '@components/Header/Header.astro';
+import ContactMenu from '@components/ContactMenu.astro';
+import '@assets/fonts/Kumb_Sans/stylesheet.css';
+import '@styles/global.css';
 ---
 
 <!doctype html>
@@ -17,6 +18,7 @@ import { ClientRouter } from 'astro:transitions';
     <ClientRouter />
   </head>
   <body class="text-white box-border font-kumbh m-0 w-full h-full">
+    <ContactMenu />
     <main class="homepage full-container">
       <Header />
       <slot />
