@@ -1,0 +1,80 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  lang?: string;
+}
+
+const {
+  title,
+  description = 'Luis Farfan - Tech Lead & Full-Stack Software Engineer',
+  lang = 'en',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang} class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Luis Farfan",
+        "jobTitle": "Tech Lead & Full-Stack Software Engineer",
+        "url": "https://luisfarfan.dev",
+        "sameAs": [
+          "https://www.linkedin.com/in/luisefarfan/",
+          "https://github.com/luisefarfan"
+        ]
+      }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Global Styles -->
+    <style>
+      @import '../styles/global.css';
+    </style>
+  </head>
+  <body class="bg-dark-950 text-white font-sans">
+    <slot />
+
+    <script>
+      // Theme toggle functionality
+      const themeToggle = document.getElementById('theme-toggle');
+      const html = document.documentElement;
+
+      themeToggle?.addEventListener('click', () => {
+        html.classList.toggle('dark');
+        localStorage.setItem(
+          'theme',
+          html.classList.contains('dark') ? 'dark' : 'light'
+        );
+      });
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        html.classList.toggle('dark', savedTheme === 'dark');
+      }
+    </script>
+  </body>
+</html>

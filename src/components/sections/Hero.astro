@@ -1,0 +1,94 @@
+---
+import { personalInfo, translations } from '../../constants/content';
+
+export interface Props {
+  lang?: 'en' | 'es';
+}
+
+const { lang = 'en' } = Astro.props;
+const t = translations[lang];
+---
+
+<section
+  id="home"
+  class="min-h-screen flex items-center justify-center pt-20 px-6"
+>
+  <div class="container mx-auto">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="space-y-8 animate-slide-up">
+        <div class="space-y-4">
+          <h1 class="text-5xl lg:text-7xl font-bold">
+            {t.hero.greeting}<span class="text-primary-500">.</span>
+          </h1>
+          <h2 class="text-3xl lg:text-4xl font-light text-gray-300">
+            {t.hero.intro}
+          </h2>
+          <h3 class="text-xl lg:text-2xl font-semibold text-white">
+            {personalInfo.role}
+          </h3>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="#contact"
+            class="bg-primary-500 hover:bg-primary-600 text-white px-8 py-3 rounded-lg font-medium transition-colors inline-flex items-center justify-center"
+          >
+            {t.hero.cta1}
+          </a>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            class="border border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white px-8 py-3 rounded-lg font-medium transition-colors inline-flex items-center justify-center"
+          >
+            {t.hero.cta2}
+          </a>
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="flex flex-wrap gap-4 pt-8">
+          <span class="text-gray-400 text-sm">HTML5</span>
+          <span class="text-gray-400 text-sm">CSS</span>
+          <span class="text-gray-400 text-sm">JavaScript</span>
+          <span class="text-gray-400 text-sm">Node.js</span>
+          <span class="text-gray-400 text-sm">React</span>
+          <span class="text-gray-400 text-sm">Git</span>
+          <span class="text-gray-400 text-sm">GitHub</span>
+        </div>
+      </div>
+
+      <div class="relative flex justify-center lg:justify-end animate-fade-in">
+        <div class="relative">
+          <!-- Background Circle -->
+          <div
+            class="w-80 h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 opacity-20 animate-float"
+          >
+          </div>
+
+          <!-- Profile Image -->
+          <div class="absolute inset-0 flex items-center justify-center">
+            <img
+              src="/placeholder.svg?height=300&width=300"
+              alt="Luis Farfan"
+              class="w-64 h-64 lg:w-80 lg:h-80 rounded-full object-cover border-4 border-primary-500/30"
+              loading="eager"
+            />
+          </div>
+
+          <!-- Geometric Elements -->
+          <div
+            class="absolute -top-4 -right-4 w-8 h-8 border-2 border-primary-500 rotate-45"
+          >
+          </div>
+          <div
+            class="absolute -bottom-4 -left-4 w-6 h-6 bg-primary-500 rounded-full"
+          >
+          </div>
+          <div
+            class="absolute top-1/2 -left-8 w-4 h-4 border-2 border-primary-500"
+          >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
