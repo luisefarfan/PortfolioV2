@@ -1,0 +1,51 @@
+---
+const { lang = 'en' } = Astro.props;
+
+const currentYear = new Date().getFullYear();
+
+const content = {
+  en: {
+    rights: 'All rights reserved.',
+    built: 'Built with',
+    and: 'and',
+  },
+  es: {
+    rights: 'Todos los derechos reservados.',
+    built: 'Construido con',
+    and: 'y',
+  },
+};
+---
+
+<footer class="py-8 px-6 border-t border-dark-700 bg-dark-800/30">
+  <div class="container mx-auto">
+    <div
+      class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
+    >
+      <div class="text-gray-400 text-sm">
+        © {currentYear} Luis Farfan. {content[lang].rights}
+      </div>
+
+      <div class="flex items-center space-x-2 text-gray-400 text-sm">
+        <span>{content[lang].built}</span>
+        <a
+          href="https://astro.build"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-primary-400 hover:text-primary-300 transition-colors"
+        >
+          Astro
+        </a>
+        <span>{content[lang].and}</span>
+        <a
+          href="https://tailwindcss.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-primary-400 hover:text-primary-300 transition-colors"
+        >
+          TailwindCSS
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

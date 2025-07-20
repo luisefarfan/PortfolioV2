@@ -1,0 +1,116 @@
+---
+const { lang = 'en' } = Astro.props;
+
+const navigation = {
+  en: [
+    { name: 'About', href: '#about' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Contact', href: '#contact' },
+  ],
+  es: [
+    { name: 'Acerca', href: '#about' },
+    { name: 'Experiencia', href: '#experience' },
+    { name: 'Proyectos', href: '#projects' },
+    { name: 'Habilidades', href: '#skills' },
+    { name: 'Contacto', href: '#contact' },
+  ],
+};
+---
+
+<header
+  class="fixed top-0 w-full bg-dark-900/80 backdrop-blur-md border-b border-dark-700 z-50"
+>
+  <nav class="container mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <a href="/" class="text-2xl font-bold text-primary-400 font-mono">
+        Dev /
+      </a>
+
+      <div class="hidden md:flex items-center space-x-8">
+        {
+          navigation[lang].map((item) => (
+            <a
+              href={item.href}
+              class="text-gray-300 hover:text-primary-400 transition-colors duration-200 font-medium"
+            >
+              {item.name}
+            </a>
+          ))
+        }
+
+        <div class="flex items-center space-x-4">
+          <button
+            id="theme-toggle"
+            class="p-2 rounded-lg bg-dark-800 hover:bg-dark-700 transition-colors"
+            aria-label="Toggle theme"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              ></path>
+            </svg>
+          </button>
+
+          <div class="flex items-center space-x-2">
+            <a
+              href="/"
+              class={`text-sm ${lang === 'en' ? 'text-primary-400' : 'text-gray-400'}`}
+              >EN</a
+            >
+            <span class="text-gray-600">|</span>
+            <a
+              href="/es"
+              class={`text-sm ${lang === 'es' ? 'text-primary-400' : 'text-gray-400'}`}
+              >ES</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button class="md:hidden p-2" id="mobile-menu-toggle">
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="md:hidden hidden" id="mobile-menu">
+      <div class="pt-4 pb-2 space-y-2">
+        {
+          navigation[lang].map((item) => (
+            <a
+              href={item.href}
+              class="block px-3 py-2 text-gray-300 hover:text-primary-400 transition-colors"
+            >
+              {item.name}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (mobileMenuToggle && mobileMenu) {
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+</script>

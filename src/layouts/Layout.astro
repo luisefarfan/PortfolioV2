@@ -19,21 +19,28 @@ const {
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title}</title>
+    <meta name="generator" content={Astro.generator} />
 
-    <!-- Open Graph -->
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
 
-    <!-- Schema.org -->
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+
+    <!-- Schema.org markup -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Luis Farfan",
         "jobTitle": "Tech Lead & Full-Stack Software Engineer",
-        "url": "https://luisfarfan.dev",
+        "url": "https://luisefarfan.dev",
         "sameAs": [
           "https://www.linkedin.com/in/luisefarfan/",
           "https://github.com/luisefarfan"
@@ -41,20 +48,9 @@ const {
       }
     </script>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Global Styles -->
-    <style>
-      @import '../styles/global.css';
-    </style>
+    <title>{title}</title>
   </head>
-  <body class="bg-dark-950 text-white font-sans">
+  <body class="bg-dark-900 text-white">
     <slot />
 
     <script>
@@ -62,15 +58,17 @@ const {
       const themeToggle = document.getElementById('theme-toggle');
       const html = document.documentElement;
 
-      themeToggle?.addEventListener('click', () => {
-        html.classList.toggle('dark');
-        localStorage.setItem(
-          'theme',
-          html.classList.contains('dark') ? 'dark' : 'light'
-        );
-      });
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          html.classList.toggle('dark');
+          localStorage.setItem(
+            'theme',
+            html.classList.contains('dark') ? 'dark' : 'light'
+          );
+        });
+      }
 
-      // Load saved theme
+      // Set initial theme
       const savedTheme = localStorage.getItem('theme');
       if (savedTheme) {
         html.classList.toggle('dark', savedTheme === 'dark');
@@ -78,3 +76,7 @@ const {
     </script>
   </body>
 </html>
+
+<style>
+  @import '../styles/global.css';
+</style>

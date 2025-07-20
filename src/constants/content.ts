@@ -20,7 +20,7 @@ export interface Experience {
   period: string
   role: string
   description: string
-  technologies: string[]
+  technologies?: string[]
 }
 
 export interface Project {
@@ -33,8 +33,9 @@ export interface Project {
 
 export interface Skill {
   name: string
-  years?: number
   category: "frontend" | "backend" | "database" | "tools" | "soft"
+  level: number
+  years?: number
 }
 
 export const personalInfo: PersonalInfo = {
@@ -60,7 +61,7 @@ export const experiences: Experience[] = [
     period: "2022 - Today",
     role: "Fullstack Developer",
     description:
-      "Using React.js, Express.js and Next.js. Maintaining TELUS Support page, leading projects and bug fixes. Major project: complete migration from React v12 to NextJS with React v18.",
+      "Fullstack Developer using React.js, Express.js and Next.js. Maintaining TELUS Support page, leading projects and bug fixes. Major project: complete migration from React v12 to NextJS with React v18.",
     technologies: ["React.js", "Express.js", "Next.js", "React 18"],
   },
   {
@@ -68,8 +69,8 @@ export const experiences: Experience[] = [
     period: "2019 - 2021",
     role: "Fullstack Web Developer",
     description:
-      "Using Symfony, HTML, Javascript, CSS, React, Docker and SQL. Worked on 2 large projects from requirements gathering to deployment.",
-    technologies: ["Symfony", "React", "Docker", "SQL", "HTML", "CSS", "JavaScript"],
+      "Fullstack Web Developer using Symfony, HTML, Javascript, CSS, React, Docker and SQL. Worked on 2 large projects from requirements gathering to deployment.",
+    technologies: ["Symfony", "HTML", "JavaScript", "CSS", "React", "Docker", "SQL"],
   },
   {
     company: "Freelance",
@@ -103,154 +104,63 @@ export const projects: Project[] = [
   {
     name: "Priscilla Bianchi",
     description: "Artist e-commerce site",
-    technologies: ["React", "Stripe", "Node.js"],
+    technologies: ["Next.js", "Stripe", "TailwindCSS"],
     url: "https://www.priscillabianchi.net",
   },
   {
     name: "Carolina Mendez",
     description: "Wedding planner landing page",
-    technologies: ["Next.js", "TailwindCSS"],
+    technologies: ["React", "TailwindCSS", "Framer Motion"],
     url: "https://www.carolinamendez.com.gt",
   },
   {
     name: "Servpresa",
     description: "Industrial security company site",
-    technologies: ["React", "Node.js"],
+    technologies: ["Next.js", "TailwindCSS", "PostgreSQL"],
     url: "https://www.servpresa.com.gt",
   },
   {
     name: "Squadra",
     description: "HR company landing page",
-    technologies: ["Next.js", "TailwindCSS"],
+    technologies: ["React", "TailwindCSS", "Node.js"],
     url: "https://www.squadra.com.gt",
   },
 ]
 
 export const skills: Skill[] = [
-  { name: "JavaScript", years: 5, category: "frontend" },
-  { name: "React", years: 3, category: "frontend" },
-  { name: "Next.js", category: "frontend" },
-  { name: "TypeScript", category: "frontend" },
-  { name: "Redux", years: 1, category: "frontend" },
-  { name: "HTML", category: "frontend" },
-  { name: "CSS", category: "frontend" },
-  { name: "TailwindCSS", category: "frontend" },
-  { name: "Node.js", category: "backend" },
-  { name: "Symfony", years: 3, category: "backend" },
-  { name: "PHP", category: "backend" },
-  { name: "PostgreSQL", category: "database" },
-  { name: "MySQL", category: "database" },
-  { name: "SQL", category: "database" },
-  { name: "Docker", category: "tools" },
-  { name: "Team Work", category: "soft" },
-  { name: "Leadership", category: "soft" },
-  { name: "Responsibility", category: "soft" },
-  { name: "Excellence", category: "soft" },
+  { name: "JavaScript", category: "frontend", level: 95, years: 5 },
+  { name: "React", category: "frontend", level: 90, years: 3 },
+  { name: "Next.js", category: "frontend", level: 85, years: 2 },
+  { name: "TypeScript", category: "frontend", level: 80, years: 2 },
+  { name: "Redux", category: "frontend", level: 75, years: 1 },
+  { name: "Node.js", category: "backend", level: 85, years: 3 },
+  { name: "Symfony", category: "backend", level: 80, years: 3 },
+  { name: "PHP", category: "backend", level: 75, years: 3 },
+  { name: "PostgreSQL", category: "database", level: 80, years: 3 },
+  { name: "MySQL", category: "database", level: 75, years: 3 },
+  { name: "Docker", category: "tools", level: 70, years: 2 },
+  { name: "TailwindCSS", category: "frontend", level: 90, years: 2 },
+  { name: "Team Work", category: "soft", level: 95 },
+  { name: "Leadership", category: "soft", level: 90 },
+  { name: "Responsibility", category: "soft", level: 95 },
+  { name: "Excellence", category: "soft", level: 90 },
 ]
 
-export const translations = {
-  en: {
-    nav: {
-      home: "Home",
-      about: "About",
-      experience: "Experience",
-      projects: "Projects",
-      skills: "Skills",
-      contact: "Contact",
-    },
-    hero: {
-      greeting: "Hello",
-      intro: "I'm Luis",
-      cta1: "Get a Project",
-      cta2: "My Resume",
-    },
-    about: {
-      title: "About me",
-      stats: {
-        projects: "Completed Projects",
-        satisfaction: "Client Satisfaction",
-        experience: "Years of Experience",
-      },
-    },
-    experience: {
-      title: "Experience",
-    },
-    projects: {
-      title: "Projects",
-      viewProject: "View Project",
-      viewGithub: "View GitHub",
-    },
-    skills: {
-      title: "Skills",
-      categories: {
-        frontend: "Frontend",
-        backend: "Backend",
-        database: "Database",
-        tools: "Tools",
-        soft: "Soft Skills",
-      },
-    },
-    contact: {
-      title: "Have a project?",
-      subtitle: "Let's talk!",
-      form: {
-        name: "Name",
-        email: "Email",
-        message: "Message",
-        submit: "Submit",
-      },
-    },
-  },
-  es: {
-    nav: {
-      home: "Inicio",
-      about: "Acerca",
-      experience: "Experiencia",
-      projects: "Proyectos",
-      skills: "Habilidades",
-      contact: "Contacto",
-    },
-    hero: {
-      greeting: "Hola",
-      intro: "Soy Luis",
-      cta1: "Obtener Proyecto",
-      cta2: "Mi CV",
-    },
-    about: {
-      title: "Acerca de mí",
-      stats: {
-        projects: "Proyectos Completados",
-        satisfaction: "Satisfacción del Cliente",
-        experience: "Años de Experiencia",
-      },
-    },
-    experience: {
-      title: "Experiencia",
-    },
-    projects: {
-      title: "Proyectos",
-      viewProject: "Ver Proyecto",
-      viewGithub: "Ver GitHub",
-    },
-    skills: {
-      title: "Habilidades",
-      categories: {
-        frontend: "Frontend",
-        backend: "Backend",
-        database: "Base de Datos",
-        tools: "Herramientas",
-        soft: "Habilidades Blandas",
-      },
-    },
-    contact: {
-      title: "¿Tienes un proyecto?",
-      subtitle: "¡Hablemos!",
-      form: {
-        name: "Nombre",
-        email: "Correo",
-        message: "Mensaje",
-        submit: "Enviar",
-      },
-    },
-  },
-}
+export const techStack = [
+  "WEB",
+  "PROGRAMMING",
+  "DEVELOPMENT",
+  "JAVASCRIPT",
+  "CSS",
+  "FIGMA",
+  "GIT",
+  "HTML",
+  "REACT",
+  "NODE.JS",
+  "TYPESCRIPT",
+  "NEXT.JS",
+  "SYMFONY",
+  "POSTGRESQL",
+  "DOCKER",
+  "TAILWINDCSS",
+]
