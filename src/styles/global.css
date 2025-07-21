@@ -105,10 +105,6 @@
   white-space: nowrap;
 }
 
-@utility tech-marquee:hover {
-  animation-play-state: paused;
-}
-
 /* Base styles */
 * {
   margin: 0;
