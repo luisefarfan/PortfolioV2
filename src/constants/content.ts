@@ -12,6 +12,7 @@ export interface PersonalInfo {
       en: string
     }
   }
+  resume: string
 }
 
 export interface AboutContent {
@@ -56,6 +57,7 @@ export const personalInfo: PersonalInfo = {
       es: 'https://wa.link/b3lr25'
     }
   },
+  resume: 'https://portfolio.luisefarfan.com/cv-en.pdf'
 }
 
 export const aboutContent: AboutContent = {
