@@ -7,6 +7,10 @@ export interface PersonalInfo {
     phone: string
     linkedin: string
     github: string
+    whatsapp: {
+      es: string
+      en: string
+    }
   }
 }
 
@@ -41,12 +45,16 @@ export interface Skill {
 export const personalInfo: PersonalInfo = {
   name: "Luis Farfan",
   role: "Tech Lead & Full-Stack Software Engineer",
-  experience: "5+ years",
+  experience: "6+",
   contact: {
     email: "luisefarfan.dev@gmail.com",
     phone: "+50242980332",
     linkedin: "https://www.linkedin.com/in/luisefarfan/",
     github: "https://github.com/luisefarfan",
+    whatsapp: {
+      en: 'https://wa.link/ohwjr9',
+      es: 'https://wa.link/b3lr25'
+    }
   },
 }
 
