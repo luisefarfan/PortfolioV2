@@ -28,9 +28,9 @@ const navigation = {
 <header
   class="fixed top-0 w-full bg-dark-900/80 backdrop-blur-md border-b border-dark-700 z-50"
 >
-  <nav class="container mx-auto px-6 py-4">
+  <nav class="container mx-auto px-6">
     <div class="flex items-center justify-between">
-      <a href="/" class="text-2xl font-bold text-primary-400 font-mono">
+      <a href="/" class="text-2xl font-bold text-primary-400 font-mono py-4">
         Luis Farfan
       </a>
 
@@ -39,32 +39,38 @@ const navigation = {
           navigation[lang].map((item) => (
             <a
               href={item.href}
-              class="text-gray-300 hover:text-primary-400 transition-colors duration-200 font-medium"
+              class="text-gray-300 hover:text-primary-400 transition-colors duration-200 font-medium py-4"
             >
               {item.name}
             </a>
           ))
         }
 
-        <div class="flex items-center space-x-4">
-          <div class="flex items-center space-x-2">
-            <a
-              href="/"
-              class={`text-sm ${lang === 'en' ? 'text-primary-400' : 'text-gray-400'}`}
-              >EN</a
-            >
-            <span class="text-gray-600">|</span>
-            <a
-              href="/es"
-              class={`text-sm ${lang === 'es' ? 'text-primary-400' : 'text-gray-400'}`}
-              >ES</a
-            >
-          </div>
+        <div class="flex items-center">
+          <a
+            href="/"
+            class:list={[
+              'text-sm px-4 py-4 text-gray-400',
+              {
+                'text-primary-400': lang === 'en',
+              },
+            ]}>EN</a
+          >
+          <span class="text-gray-600">|</span>
+          <a
+            href="/es"
+            class:list={[
+              'text-sm px-4 py-4 text-gray-400',
+              {
+                'text-primary-400': lang === 'es',
+              },
+            ]}>ES</a
+          >
         </div>
       </div>
 
       <!-- Mobile menu button -->
-      <button class="lg:hidden p-2" id="mobile-menu-toggle">
+      <button class="lg:hidden p-4 cursor-pointer" id="mobile-menu-toggle">
         <svg
           class="w-6 h-6"
           fill="none"
@@ -93,6 +99,28 @@ const navigation = {
             </a>
           ))
         }
+
+        <div class="flex items-center justify-center space-x-1 text-lg">
+          <a
+            href="/"
+            class:list={[
+              'p-4 text-gray-400',
+              {
+                'text-primary-400': lang === 'en',
+              },
+            ]}>EN</a
+          >
+          <span class="text-gray-600">|</span>
+          <a
+            href="/es"
+            class:list={[
+              'p-4 text-gray-400',
+              {
+                'text-primary-400': lang === 'es',
+              },
+            ]}>ES</a
+          >
+        </div>
       </div>
     </div>
   </nav>
