@@ -51,28 +51,6 @@ const {
   </head>
   <body class="bg-dark-900 text-white">
     <slot />
-
-    <script>
-      // Theme toggle functionality
-      const themeToggle = document.getElementById('theme-toggle');
-      const html = document.documentElement;
-
-      if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-          html.classList.toggle('dark');
-          localStorage.setItem(
-            'theme',
-            html.classList.contains('dark') ? 'dark' : 'light'
-          );
-        });
-      }
-
-      // Set initial theme
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme) {
-        html.classList.toggle('dark', savedTheme === 'dark');
-      }
-    </script>
   </body>
 </html>
 
