@@ -1,7 +1,11 @@
 ---
-import { aboutContent } from '../../constants/content';
+import { aboutContent } from '@constants/content';
 
-const { lang = 'en' }: { lang?: 'es' | 'en' } = Astro.props;
+interface Props {
+  lang?: 'es' | 'en';
+}
+
+const { lang = 'en' }: Props = Astro.props;
 
 const sectionTitle: { en: string; es: string } = {
   en: 'About.',
