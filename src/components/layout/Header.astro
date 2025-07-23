@@ -1,4 +1,6 @@
 ---
+import LFIcon from '@components/svg/LFIcon.astro';
+
 interface Props {
   lang: 'en' | 'es';
 }
@@ -30,7 +32,11 @@ const navigation = {
 >
   <nav class="container mx-auto lg:px-6 px-4">
     <div class="flex items-center justify-between">
-      <a href="/" class="text-2xl font-bold text-primary-400 font-mono py-4">
+      <a
+        href="/"
+        class="text-2xl font-bold text-primary-400 font-mono py-4 flex items-center gap-2"
+      >
+        <span class="w-12 block"><LFIcon /></span>
         Luis Farfan
       </a>
 
