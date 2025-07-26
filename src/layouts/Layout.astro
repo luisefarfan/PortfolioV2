@@ -10,7 +10,12 @@ export interface Props {
 
 const {
   title,
+  // TODO: Modify description to be more specific
   description = 'Luis Farfan - Tech Lead & Full-Stack Software Engineer',
+  // TODO: Add keywords
+  // keywords = ['Luis Farfan', 'Tech Lead', 'Full-Stack Engineer', 'Software Development', 'Web Development']
+  // TODO: Add image
+  // image = '/images/portfolio-thumbnail.png',
 } = Astro.props;
 
 const locale = (Astro.currentLocale as 'es' | 'en') || 'en';
