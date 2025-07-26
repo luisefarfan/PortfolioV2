@@ -14,6 +14,8 @@ const {
 } = Astro.props;
 
 const locale = (Astro.currentLocale as 'es' | 'en') || 'en';
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -41,6 +43,9 @@ const locale = (Astro.currentLocale as 'es' | 'en') || 'en';
       This license is copied below, and is also available with a FAQ at:
       https://openfontlicense.org
     -->
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
