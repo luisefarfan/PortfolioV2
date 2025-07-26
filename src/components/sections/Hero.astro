@@ -5,6 +5,7 @@ import WhatsApp from '@components/svg/WhatsApp.astro';
 import Email from '@components/svg/Email.astro';
 import LinkedIn from '@components/svg/LinkedIn.astro';
 import GitHub from '@components/svg/GitHub.astro';
+import Download from '@components/svg/Download.astro';
 
 interface Props {
   lang?: 'es' | 'en';
@@ -71,7 +72,9 @@ const heroContent: {
               <div
                 class="text-6xl font-mono text-primary-400 animate-pulse flex gap-1 group-hover:text-primary-300 group-active:text-primary-300 transition-colors duration-300"
               >
-                <span>&lt;</span>/<span>&gt;</span>
+                <span class="block w-8/12 text-primary-400 mx-auto">
+                  <Download />
+                </span>
               </div>
 
               <!-- Download hint -->
