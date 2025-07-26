@@ -1,6 +1,7 @@
 ---
 import Header from '@components/layout/Header.astro';
 import Footer from '@components/layout/Footer.astro';
+import { seoContent } from '@constants/seo';
 import '@assets/fonts/stylesheet.css';
 import '@styles/global.css';
 export interface Props {
@@ -14,76 +15,8 @@ const { title, description, keywords } = Astro.props;
 const locale = (Astro.currentLocale as 'es' | 'en') || 'en';
 
 // SEO Content based on locale
-const seoContent = {
-  en: {
-    description:
-      description ||
-      'Luis Farfan - Experienced Tech Lead & Full-Stack Software Engineer. Expert in scalable web applications, team leadership, and delivering high-impact solutions for enterprise clients. Bilingual professional with remote work expertise.',
-    keywords: keywords || [
-      'Luis Farfan',
-      'Tech Lead',
-      'Full-Stack Engineer',
-      'Software Engineer',
-      'React Developer',
-      'Node.js Developer',
-      'Next.js Expert',
-      'JavaScript Developer',
-      'TypeScript Developer',
-      'Team Leadership',
-      'Software Architecture',
-      'Web Development',
-      'Frontend Developer',
-      'Backend Developer',
-      'Software Development',
-      'Guatemala Developer',
-      'Remote Developer',
-      'Scalable Applications',
-      'Enterprise Solutions',
-      'Software Consultant',
-      'Bilingual Developer',
-      'English Spanish Developer',
-      'International Developer',
-      'Remote Work Expert',
-      'Cross-cultural Communication',
-      'Global Software Solutions',
-    ],
-  },
-  es: {
-    description:
-      description ||
-      'Luis Farfan - Líder Técnico y Desarrollador Full-Stack con experiencia. Experto en aplicaciones web escalables, liderazgo de equipos y soluciones de alto impacto para clientes empresariales. Profesional bilingüe con experiencia en trabajo remoto.',
-    keywords: keywords || [
-      'Luis Farfan',
-      'Líder Técnico',
-      'Desarrollador Full-Stack',
-      'Ingeniero de Software',
-      'Desarrollador React',
-      'Desarrollador Node.js',
-      'Experto Next.js',
-      'Desarrollador JavaScript',
-      'Desarrollador TypeScript',
-      'Liderazgo de Equipos',
-      'Arquitectura de Software',
-      'Desarrollo Web',
-      'Desarrollador Frontend',
-      'Desarrollador Backend',
-      'Desarrollo de Software',
-      'Desarrollador Guatemala',
-      'Desarrollador Remoto',
-      'Aplicaciones Escalables',
-      'Soluciones Empresariales',
-      'Consultor de Software',
-      'Desarrollador Bilingüe',
-      'Desarrollador Inglés Español',
-      'Desarrollador Internacional',
-      'Experto Trabajo Remoto',
-      'Comunicación Intercultural',
-      'Soluciones Software Globales',
-    ],
-  },
-};
-
-const currentSEO = seoContent[locale];
+const { description: seoDescription, keywords: seoKeywords } =
+  seoContent[locale];
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
@@ -119,8 +52,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <!-- Primary Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
-    <meta name="description" content={currentSEO.description} />
-    <meta name="keywords" content={currentSEO.keywords.join(', ')} />
+    <meta name="description" content={description || seoDescription} />
+    <meta
+      name="keywords"
+      content={keywords?.join(', ') || seoKeywords.join(', ')}
+    />
 
     <!-- TODO: ADD CDN URL AND MOVE THINGS TO THERE -->
     <!-- <link rel="preconnect" href={CDN_URL} /> -->
@@ -131,7 +67,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url} />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content={currentSEO.description} />
+    <meta property="og:description" content={description || seoDescription} />
     <!-- TODO: ADD IMAGE -->
     <!-- <meta property="og:image" content={new URL(image, Astro.url)} /> -->
     <meta property="og:site_name" content={title} />
@@ -140,7 +76,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={Astro.url} />
     <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={currentSEO.description} />
+    <meta
+      property="twitter:description"
+      content={description || seoDescription}
+    />
     <!-- TODO: ADD IMAGE -->
     <!-- <meta property="twitter:image" content={new URL(image, Astro.url)} /> -->
 
