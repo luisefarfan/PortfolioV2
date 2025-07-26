@@ -1,6 +1,8 @@
 ---
 import DownloadResumeButton from '@components/ui/DownloadResumeButton.astro';
 import { aboutContent } from '@constants/content';
+import { Image } from 'astro:assets';
+import profilePhoto from '@assets/images/profile.webp';
 
 interface Props {
   lang?: 'es' | 'en';
@@ -27,7 +29,13 @@ const resumeButton: { en: string; es: string } = {
     <div class="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
       <!-- Photo placeholder -->
       <div class="flex justify-center lg:justify-start">
-        <div class="w-80 h-80 bg-primary-400 rounded-lg"></div>
+        <div class="w-100 h-100 bg-primary-400 rounded-xl p-[3px]">
+          <Image
+            src={profilePhoto}
+            alt="Luis Farfan"
+            class="w-full h-full aspect-square object-cover rounded-lg"
+          />
+        </div>
       </div>
       <!-- Content -->
       <div class="space-y-3">
