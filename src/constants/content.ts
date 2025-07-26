@@ -38,7 +38,7 @@ export interface Project {
 
 export interface Skill {
   name: string
-  category: "frontend" | "backend" | "database" | "tools" | "soft"
+  category: "frontend" | "backend" | "database" | "devops" | "tools" | "soft"
   level: number
   years?: number
 }
@@ -139,17 +139,24 @@ export const projects: Project[] = [
 
 export const skills: Skill[] = [
   { name: "JavaScript", category: "frontend", level: 95, years: 5 },
-  { name: "React", category: "frontend", level: 90, years: 3 },
-  { name: "Next.js", category: "frontend", level: 85, years: 2 },
   { name: "TypeScript", category: "frontend", level: 80, years: 2 },
+  { name: "React", category: "frontend", level: 90, years: 3 },
+  { name: "TailwindCSS", category: "frontend", level: 90, years: 2 },
+  { name: "Next.js", category: "frontend", level: 85, years: 2 },
   { name: "Redux", category: "frontend", level: 75, years: 1 },
   { name: "Node.js", category: "backend", level: 85, years: 3 },
-  { name: "Symfony", category: "backend", level: 80, years: 3 },
-  { name: "PHP", category: "backend", level: 75, years: 3 },
   { name: "PostgreSQL", category: "database", level: 80, years: 3 },
   { name: "MySQL", category: "database", level: 75, years: 3 },
+  { name: "SQLite", category: "database", level: 75, years: 3 },
+  { name: "MongoDB", category: "database", level: 75, years: 3 },
+  { name: "Google Cloud Platform", category: "devops", level: 75, years: 3 },
+  { name: "AWS", category: "devops", level: 75, years: 3 },
+  { name: "GitHub Actions", category: "devops", level: 75, years: 3 },
   { name: "Docker", category: "tools", level: 70, years: 2 },
-  { name: "TailwindCSS", category: "frontend", level: 90, years: 2 },
+  { name: "Git", category: "tools", level: 95, years: 10 },
+  { name: "Figma", category: "tools", level: 95, years: 3 },
+  { name: "Symfony", category: "backend", level: 80, years: 3 },
+  { name: "PHP", category: "backend", level: 75, years: 3 },
   { name: "Team Work", category: "soft", level: 95 },
   { name: "Leadership", category: "soft", level: 90 },
   { name: "Responsibility", category: "soft", level: 95 },
