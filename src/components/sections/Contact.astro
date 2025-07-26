@@ -167,7 +167,8 @@ const content = {
 
       <!-- Contact Form -->
       <div class="bg-dark-800/50 backdrop-blur-sm rounded-lg p-8">
-        <form class="space-y-6" action="#" method="POST">
+        <form class="space-y-6" method="POST" id="contactForm">
+          <input type="hidden" name="lang" value={lang} />
           <div>
             <label
               for="name"
@@ -229,3 +230,40 @@ const content = {
     </div>
   </div>
 </section>
+
+<script>
+  import { actions } from 'astro:actions';
+
+  const form = document.getElementById('contactForm') as HTMLFormElement;
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+    const values = Object.fromEntries(formData) as {
+      name: string;
+      email: string;
+      message: string;
+      lang: 'en' | 'es';
+    };
+
+    if (!values.name || !values.email || !values.message) {
+      alert('Please fill in all fields.');
+      return;
+    }
+
+    console.log('Form submitted:', values);
+
+    try {
+      const { data, error } = await actions.sendEmail(values);
+
+      if (error) {
+        console.error('Error sending email:', error);
+        alert(error.message);
+        return;
+      }
+      alert('Message sent successfully!');
+    } catch (error) {
+      console.error('Error sending message:', error);
+      alert('Failed to send message. Please try again later.');
+    }
+  });
+</script>
