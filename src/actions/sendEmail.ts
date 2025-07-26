@@ -1,6 +1,8 @@
 import { defineAction } from "astro:actions";
 import { z } from 'astro:schema';
 import { Resend } from "resend";
+import { createAssessment } from "@lib/reCaptcha";
+import { REQUEST_CONTACT_ACTION } from "@constants/index";
 
 const getEmailMessage = (name: string, message: string, lang: 'en' | 'es'): string => {
   const emailMessages = {
@@ -28,12 +30,20 @@ export const sendEmailAction = defineAction({
     name: z.string().min(1, "Name is required"),
     email: z.string().email("Invalid email address"),
     message: z.string().min(1, "Message is required"),
-    lang: z.literal('es').or(z.literal('en'))
+    lang: z.literal('es').or(z.literal('en')),
+    'g-recaptcha-response': z.string().min(1, "reCAPTCHA token is required")
   }),
   handler: async (input) => {
-    const { name, email, message, lang } = input;
+    const { name, email, message, lang, 'g-recaptcha-response': recaptchaResponse } = input;
 
-    console.log("Sending email with input:", { name, email, message, lang });
+    const { valid } = await createAssessment({
+      token: recaptchaResponse,
+      recaptchaAction: REQUEST_CONTACT_ACTION,
+    });
+
+    if (!valid) {
+      return { success: false, message: 'Invalid reCAPTCHA' };
+    }
 
     try {
       const resendClient = new Resend(import.meta.env.RESEND_API_KEY);

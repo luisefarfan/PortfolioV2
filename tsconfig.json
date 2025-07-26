@@ -12,6 +12,7 @@
       "@styles/*": ["src/styles/*"],
       "@constants/*": ["src/constants/*"],
       "@sections/*": ["src/sections/*"],
+      "@lib/*": ["src/lib/*"],
     }
   }
 }

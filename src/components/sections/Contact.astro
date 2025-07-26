@@ -1,6 +1,7 @@
 ---
 import { personalInfo } from '@constants/content';
 import DownloadResumeButton from '@components/ui/DownloadResumeButton.astro';
+import { REQUEST_CONTACT_ACTION } from '@constants/index';
 // Icons
 import Phone from '@components/svg/Phone.astro';
 import Email from '@components/svg/Email.astro';
@@ -219,6 +220,13 @@ const content = {
               placeholder={content[lang].form.message}></textarea>
           </div>
 
+          <div
+            class="g-recaptcha"
+            data-sitekey={import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY}
+            data-action={REQUEST_CONTACT_ACTION}
+          >
+          </div>
+
           <button
             type="submit"
             class="w-full bg-primary-400 hover:bg-primary-500 text-dark-900 px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 cursor-pointer"
@@ -230,6 +238,13 @@ const content = {
     </div>
   </div>
 </section>
+
+<script
+  src="https://www.google.com/recaptcha/enterprise.js"
+  is:inline
+  async
+  defer
+  data-astro-rerun></script>
 
 <script>
   import { actions } from 'astro:actions';
@@ -243,7 +258,16 @@ const content = {
       email: string;
       message: string;
       lang: 'en' | 'es';
+      'g-recaptcha-response': string;
     };
+
+    if (
+      !values['g-recaptcha-response'] ||
+      values['g-recaptcha-response'].trim() === ''
+    ) {
+      alert('Please complete the reCAPTCHA.');
+      return;
+    }
 
     if (!values.name || !values.email || !values.message) {
       alert('Please fill in all fields.');
@@ -255,9 +279,20 @@ const content = {
     try {
       const { data, error } = await actions.sendEmail(values);
 
-      if (error) {
-        console.error('Error sending email:', error);
-        alert(error.message);
+      if (error || !data.success) {
+        if (error?.message) {
+          console.error('Error sending message:', error.message);
+          alert(error.message);
+        } else {
+          console.error(
+            'Failed to send message:',
+            data?.message || 'Unknown error'
+          );
+          alert(
+            data?.message || 'Failed to send message. Please try again later.'
+          );
+        }
+
         return;
       }
       alert('Message sent successfully!');
