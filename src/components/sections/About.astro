@@ -3,6 +3,7 @@ import DownloadResumeButton from '@components/ui/DownloadResumeButton.astro';
 import { aboutContent, personalInfo } from '@constants/content';
 import { Image } from 'astro:assets';
 import profilePhoto from '@assets/images/profile.webp';
+import Arrow from '@components/svg/Arrow.astro';
 
 interface Props {
   lang?: 'es' | 'en';
@@ -55,13 +56,16 @@ const resumeButton: { en: string; es: string } = {
           <DownloadResumeButton lang={lang} />
           <a
             href="#experience"
-            class="border border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-dark-900 px-8 py-3 rounded-lg font-semibold transition-all duration-200 block w-fit"
+            class="border border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-dark-900 px-8 py-3 rounded-lg font-semibold transition-all duration-200 w-fit flex items-center gap-2 group"
           >
-            {
-              lang === 'en'
-                ? 'My Professional Journey'
-                : 'Mi Trayectoria Profesional'
-            }
+            <span>
+              {
+                lang === 'en'
+                  ? 'My Professional Journey'
+                  : 'Mi Trayectoria Profesional'
+              }
+            </span>
+            <Arrow direction="down" />
           </a>
         </div>
       </div>

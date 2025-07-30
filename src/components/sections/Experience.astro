@@ -1,5 +1,6 @@
 ---
-import { experiences } from '../../constants/content';
+import { experiences } from '@constants/content';
+import Arrow from '@components/svg/Arrow.astro';
 
 interface Props {
   lang: 'en' | 'es';
@@ -55,6 +56,16 @@ const sectionTitle: { en: string; es: string } = {
             </div>
           ))
         }
+      </div>
+
+      <div class="flex justify-center mt-12">
+        <a
+          href="#projects"
+          class="border border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-dark-900 px-8 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center gap-2"
+        >
+          <span>{lang === 'en' ? 'See My Work' : 'Ver Mis Proyectos'}</span>
+          <Arrow direction="down" />
+        </a>
       </div>
     </div>
   </div>

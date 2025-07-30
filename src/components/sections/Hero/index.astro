@@ -5,6 +5,7 @@ import WhatsApp from '@components/svg/WhatsApp.astro';
 import Email from '@components/svg/Email.astro';
 import LinkedIn from '@components/svg/LinkedIn.astro';
 import GitHub from '@components/svg/GitHub.astro';
+import Arrow from '@components/svg/Arrow.astro';
 import DownloadCV from './DownloadCV.astro';
 
 interface Props {
@@ -126,9 +127,10 @@ const heroContent: {
           </a>
           <a
             href="#about"
-            class="border border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-dark-900 px-8 py-3 rounded-lg font-semibold transition-all duration-200 block"
+            class="border border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-dark-900 px-8 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center gap-2"
           >
-            {heroContent[lang].knowMore}
+            <span>{heroContent[lang].knowMore}</span>
+            <Arrow direction="down" />
           </a>
         </div>
       </div>

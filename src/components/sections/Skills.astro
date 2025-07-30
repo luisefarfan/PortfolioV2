@@ -1,5 +1,6 @@
 ---
 import { skills, type Skill } from '../../constants/content';
+import Arrow from '@components/svg/Arrow.astro';
 
 interface Props {
   lang: 'en' | 'es';
@@ -84,6 +85,16 @@ const groupedSkills = skills.reduce(
             </div>
           ))
         }
+      </div>
+
+      <div class="flex justify-center mt-12">
+        <a
+          href="#contact"
+          class="bg-primary-400 hover:bg-primary-500 text-dark-900 px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 flex items-center gap-2"
+        >
+          <span>{lang === 'en' ? "Let's Connect" : 'Conectemos'}</span>
+          <Arrow direction="down" />
+        </a>
       </div>
     </div>
   </div>
