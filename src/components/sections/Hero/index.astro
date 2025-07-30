@@ -17,20 +17,20 @@ const heroContent: {
   [key in typeof lang]: {
     greeting: string;
     cta: string;
-    viewWork: string;
+    knowMore: string;
     downloadResume: string;
   };
 } = {
   en: {
     greeting: "Hi, I'm Luis.",
     cta: 'Get In Touch',
-    viewWork: 'View My Work',
+    knowMore: 'Get to Know Me',
     downloadResume: 'Download my resume',
   },
   es: {
     greeting: 'Hola, soy Luis.',
     cta: 'Contáctame',
-    viewWork: 'Ver mi trabajo',
+    knowMore: '¿Quién soy?',
     downloadResume: 'Descarga mi currículum',
   },
 };
@@ -125,10 +125,10 @@ const heroContent: {
             {heroContent[lang].cta}
           </a>
           <a
-            href="#projects"
+            href="#about"
             class="border border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-dark-900 px-8 py-3 rounded-lg font-semibold transition-all duration-200 block"
           >
-            {heroContent[lang].viewWork}
+            {heroContent[lang].knowMore}
           </a>
         </div>
       </div>
