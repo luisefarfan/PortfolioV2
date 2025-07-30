@@ -6,6 +6,7 @@ import Email from '@components/svg/Email.astro';
 import LinkedIn from '@components/svg/LinkedIn.astro';
 import GitHub from '@components/svg/GitHub.astro';
 import Download from '@components/svg/Download.astro';
+import DownloadCV from './DownloadCV.astro';
 
 interface Props {
   lang?: 'es' | 'en';
@@ -43,80 +44,17 @@ const heroContent: {
   <div class="container mx-auto">
     <div class="grid lg:grid-cols-2 gap-12 items-center">
       <!-- Left side - Code visual -->
-      <div class="flex justify-center lg:justify-start lg:mt-0 mt-8">
-        <div class="relative">
-          <a
-            href={personalInfo.resume}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group block w-64 h-64"
-            aria-label={heroContent[lang].downloadResume}
-          >
-            <!-- Subtle hint text at top -->
-            <div
-              class="absolute -top-8 left-1/2 transform -translate-x-1/2 opacity-60 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300"
-            >
-              <p
-                class="text-xs text-primary-400 font-mono text-center whitespace-nowrap"
-              >
-                {heroContent[lang].downloadResume}
-              </p>
-            </div>
-
-            <div
-              class="w-64 h-64 border-2 border-primary-400 rounded-lg bg-dark-800/50 backdrop-blur-sm flex items-center justify-center group-hover:border-primary-300 group-hover:bg-dark-700/60 group-active:border-primary-300 group-active:bg-dark-700/60 transition-all duration-300 cursor-pointer"
-            >
-              <div
-                class="text-6xl font-mono text-primary-400 animate-pulse flex gap-1 group-hover:text-primary-300 group-active:text-primary-300 transition-colors duration-300"
-              >
-                <span class="block w-7/12 text-primary-400 mx-auto">
-                  <Download />
-                </span>
-              </div>
-
-              <!-- Download hint -->
-              <div
-                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300"
-              >
-                <div
-                  class="bg-dark-900/90 backdrop-blur-sm rounded-lg px-3 py-2 border border-primary-400/30"
-                >
-                  <div
-                    class="flex items-center gap-2 text-primary-400 text-sm font-mono"
-                  >
-                    <svg
-                      class="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                      ></path>
-                    </svg>
-                    <span class="whitespace-nowrap"
-                      >{lang === 'en' ? 'Resume' : 'Currículum'}</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <div
-            class="absolute -bottom-4 -right-4 bg-primary-400 text-dark-900 px-4 py-2 rounded-lg font-mono font-semibold"
-          >
-            {personalInfo.experience}
-            {lang === 'en' ? 'Years' : 'Años'}
-          </div>
-        </div>
+      <div
+        class="flex justify-center lg:justify-start lg:mt-0 mt-8 order-2 lg:order-1"
+      >
+        <DownloadCV
+          lang={lang}
+          downloadLabel={heroContent[lang].downloadResume}
+        />
       </div>
 
       <!-- Right side - Content -->
-      <div class="text-center lg:text-left space-y-6">
+      <div class="text-center lg:text-left space-y-6 order-1 lg:order-2">
         <h1 class="text-5xl lg:text-7xl font-bold">
           {heroContent[lang].greeting}
           <br />
