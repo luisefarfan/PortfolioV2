@@ -16,7 +16,6 @@ const { lang = 'en' }: Props = Astro.props;
 const heroContent: {
   [key in typeof lang]: {
     greeting: string;
-    role: string;
     cta: string;
     viewWork: string;
     downloadResume: string;
@@ -24,14 +23,12 @@ const heroContent: {
 } = {
   en: {
     greeting: "Hi, I'm Luis.",
-    role: 'Tech Lead & Software Engineer',
     cta: 'Get In Touch',
     viewWork: 'View My Work',
     downloadResume: 'Download my resume',
   },
   es: {
     greeting: 'Hola, soy Luis.',
-    role: 'Líder Técnico & Ingeniero de Software',
     cta: 'Contáctame',
     viewWork: 'Ver mi trabajo',
     downloadResume: 'Descarga mi currículum',
@@ -60,14 +57,14 @@ const heroContent: {
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold">
           {heroContent[lang].greeting}
           <br />
-          <span class="gradient-text">{heroContent[lang].role}</span>
+          <span class="gradient-text">{personalInfo.role[lang]}</span>
         </h1>
 
         <p class="lg:text-xl text-lg text-gray-300 max-w-2xl mx-auto">
           {
             lang === 'en'
-              ? 'Building scalable web applications and leading development teams with 5+ years of experience in modern JavaScript frameworks.'
-              : 'Construyendo aplicaciones web escalables y liderando equipos de desarrollo con más de 5 años de experiencia en frameworks modernos de JavaScript.'
+              ? 'Building scalable web applications and leading development teams with 6+ years of experience in modern JavaScript frameworks.'
+              : 'Construyendo aplicaciones web escalables y liderando equipos de desarrollo con más de 6 años de experiencia en frameworks modernos de JavaScript.'
           }
         </p>
 
