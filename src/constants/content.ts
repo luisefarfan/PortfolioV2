@@ -4,6 +4,10 @@ export interface PersonalInfo {
     en: string
     es: string
   }
+  heroContent: {
+    en: string
+    es: string
+  }
   experience: string
   contact: {
     email: string
@@ -52,6 +56,10 @@ export const personalInfo: PersonalInfo = {
     en: "Tech Lead & Software Engineer",
     es: "Líder Técnico & Ingeniero de Software"
   },
+  heroContent: {
+    en: "Leading the delivery of high-impact, scalable software solutions through technical excellence, clean architecture, and a dedicated focus on solving real business challenges with measurable results.",
+    es: "Liderando el desarrollo de soluciones tecnológicas escalables y de alto impacto, mediante excelencia técnica, arquitectura limpia y un enfoque centrado en resolver desafíos empresariales reales con resultados medibles."
+  },
   experience: "6+",
   contact: {
     email: "luisefarfan.dev@gmail.com",
@@ -67,8 +75,12 @@ export const personalInfo: PersonalInfo = {
 }
 
 export const aboutContent: AboutContent = {
-  en: "I'm a tech lead and software engineer with over 6 years of experience building scalable, high-impact web applications. I specialize in JavaScript frameworks like React, Node.js, and Next.js, and I have a strong track record of delivering clean, efficient, and secure solutions across complex systems. In my current role, I lead development teams, oversee architecture decisions, conduct code reviews, and mentor developers to ensure both technical excellence and team growth. I collaborate closely with stakeholders to align technology with business goals, driving measurable value through smart, scalable solutions. Whether building high-performance APIs, optimizing user experiences for large-scale platforms, or leading cross-functional teams, I bring a balance of hands-on technical expertise and a strong product mindset. I'm always looking for opportunities to help teams innovate and turn ideas into reliable, maintainable software.",
-  es: "Soy líder técnico e ingeniero de software con más de 6 años de experiencia creando aplicaciones web escalables y de alto impacto. Me especializo en frameworks de JavaScript como React, Node.js y Next.js, con un historial comprobado en entregar soluciones limpias, eficientes y seguras en sistemas complejos. En mi rol actual, lidero equipos de desarrollo, tomo decisiones de arquitectura, reviso código y doy mentoría a otros desarrolladores para garantizar calidad técnica y crecimiento del equipo. Estoy en constante comunicación con las partes interesadas para alinear la tecnología con los objetivos del negocio, generando valor real a través de soluciones escalables e inteligentes. Ya sea construyendo APIs de alto rendimiento, mejorando la experiencia de usuario en plataformas de gran escala o liderando equipos multidisciplinarios, combino mi experiencia técnica con una fuerte visión de producto. Siempre busco oportunidades para innovar y convertir ideas en software confiable y mantenible.",
+  en: `I’m a Software Engineer and Technical Lead from Guatemala with over 6 years of experience delivering full-stack web and mobile solutions that scale. I began my career building a startup from the ground up, and later joined TELUS Digital, where I progressed into a leadership role—currently managing cross-functional teams of developers, QA, and content managers. I thrive in fast-paced environments, driving projects forward with clear communication, technical direction, and a strong focus on user impact.
+
+My core stack includes React, Node.js, Astro, and Next.js, and I’ve led the development of AI- powered tools, SEO-optimized platforms, and revenue - driving B2B apps.I understand how to balance business goals with user needs, ensuring that every feature built adds measurable value.Beyond my full - time role, I also work as a freelancer, helping companies turn concepts into polished, production - ready software.If you're looking for someone who combines strong engineering fundamentals with product thinking—I can help you build what’s next.`,
+  es: `Soy Ingeniero de Software y Líder Técnico de Guatemala con más de 6 años de experiencia desarrollando soluciones web y móviles de alto impacto. Inicié creando una startup desde cero, y luego me integré a TELUS Digital, donde crecí hasta liderar equipos multidisciplinarios. Actualmente gestiono múltiples proyectos simultáneos, asegurando una comunicación clara, liderazgo técnico sólido y un enfoque constante en el valor para el usuario.
+
+Trabajo con tecnologías como React, Node.js, Astro y Next.js, y he liderado el desarrollo de herramientas con IA, sitios web optimizados para SEO y plataformas B2B que generan ingresos reales. Combino visión de negocio con pensamiento técnico, asegurando que cada desarrollo tenga un propósito claro. Además, como freelance, he ayudado a transformar ideas en productos listos para producción. Si buscas a alguien que mezcle excelencia técnica con mentalidad de producto, estoy listo para construir lo que sigue.`,
 }
 
 export const experiences: Experience[] = [
