@@ -19,16 +19,9 @@ export const getEnAnswerEmail = (name: string, message: string) => `<body
                       style="display: inline-block; background-color: rgba(15, 23, 42, 0.2); padding: 12px 20px; border-radius: 8px; margin-bottom: 16px;">
                       <span
                         style="color: #ffffff; font-size: 24px; font-weight: bold; font-family: 'Courier New', monospace;">
-                        <svg width="64" viewBox="0 0 64 64">
-                          <path d="M18 16L8 16C6.89543 16 6 16.8954 6 18L6 46C6 47.1046 6.89543 48 8 48L18 48"
-                            stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round"></path>
-
-                          <path d="M46 16L56 16C57.1046 16 58 16.8954 58 18L58 46C58 47.1046 57.1046 48 56 48L46 48"
-                            stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round"></path>
-
-                          <text x="32" y="38" font-family="JetBrains Mono, monospace" font-size="16" font-weight="700"
-                            text-anchor="middle" fill="#ffffff">LF</text>
-                        </svg>
+                        <img
+                          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCiAgPHBhdGggZD0iTTE4IDE2TDggMTZDNi44OTU0MyAxNiA2IDE2Ljg5NTQgNiAxOEw2IDQ2QzYgNDcuMTA0NiA2Ljg5NTQzIDQ4IDggNDhMMTggNDgiDQogICAgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+PC9wYXRoPg0KDQogIDxwYXRoIGQ9Ik00NiAxNkw1NiAxNkM1Ny4xMDQ2IDE2IDU4IDE2Ljg5NTQgNTggMThMNTggNDZDNTggNDcuMTA0NiA1Ny4xMDQ2IDQ4IDU2IDQ4TDQ2IDQ4Ig0KICAgIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiPjwvcGF0aD4NCg0KICA8dGV4dCB4PSIzMiIgeT0iMzgiIGZvbnQtZmFtaWx5PSJKZXRCcmFpbnMgTW9ubywgbW9ub3NwYWNlIiBmb250LXNpemU9IjE2IiBmb250LXdlaWdodD0iNzAwIg0KICAgIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmZmZmZmYiPkxGPC90ZXh0Pg0KPC9zdmc+DQo="
+                          alt="Luis Farfan" width="64" height="64" style="display: block;">
                       </span>
                     </div>
                     <h1
@@ -102,43 +95,27 @@ export const getEnAnswerEmail = (name: string, message: string) => `<body
                     <div style="margin-bottom: 20px;">
                       <a href="https://www.linkedin.com/in/luisefarfan/"
                         style="display: inline-block; margin: 0 8px; padding: 10px; background-color: #334155; border-radius: 8px; text-decoration: none; transition: background-color 0.2s;">
-                        <svg width="20" height="20" fill="#2dd4bf" viewBox="0 0 24 24" style="display: block;">
-                          <path
-                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z">
-                          </path>
-                        </svg>
+                        <img
+                          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9IiMyZGQ0YmYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3R5bGU9ImRpc3BsYXk6IGJsb2NrOyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0yMC40NDcgMjAuNDUyaC0zLjU1NHYtNS41NjljMC0xLjMyOC0uMDI3LTMuMDM3LTEuODUyLTMuMDM3LTEuODUzIDAtMi4xMzYgMS40NDUtMi4xMzYgMi45Mzl2NS42NjdIOS4zNTFWOWgzLjQxNHYxLjU2MWguMDQ2Yy40NzctLjkgMS42MzctMS44NSAzLjM3LTEuODUgMy42MDEgMCA0LjI2NyAyLjM3IDQuMjY3IDUuNDU1djYuMjg2ek01LjMzNyA3LjQzM2MtMS4xNDQgMC0yLjA2My0uOTI2LTIuMDYzLTIuMDY1IDAtMS4xMzguOTItMi4wNjMgMi4wNjMtMi4wNjMgMS4xNCAwIDIuMDY0LjkyNSAyLjA2NCAyLjA2MyAwIDEuMTM5LS45MjUgMi4wNjUtMi4wNjQgMi4wNjV6bTEuNzgyIDEzLjAxOUgzLjU1NVY5aDMuNTY0djExLjQ1MnpNMjIuMjI1IDBIMS43NzFDLjc5MiAwIDAgLjc3NCAwIDEuNzI5djIwLjU0MkMwIDIzLjIyNy43OTIgMjQgMS43NzEgMjRoMjAuNDUxQzIzLjIgMjQgMjQgMjMuMjI3IDI0IDIyLjI3MVYxLjcyOUMyNCAuNzc0IDIzLjIgMCAyMi4yMjIgMGguMDAzeiI+PC9wYXRoPg0KPC9zdmc+DQo="
+                          alt="LinkedIn" width="20" height="20" style="display: block;">
                       </a>
                       <a href="https://github.com/luisefarfan"
                         style="display: inline-block; margin: 0 8px; padding: 10px; background-color: #334155; border-radius: 8px; text-decoration: none;">
-                        <svg width="20" height="20" fill="#2dd4bf" viewBox="0 0 24 24" style="display: block;">
-                          <path
-                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z">
-                          </path>
-                        </svg>
+                        <img
+                          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9IiMyZGQ0YmYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3R5bGU9ImRpc3BsYXk6IGJsb2NrOyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIgMGMtNi42MjYgMC0xMiA1LjM3My0xMiAxMiAwIDUuMzAyIDMuNDM4IDkuOCA4LjIwNyAxMS4zODcuNTk5LjExMS43OTMtLjI2MS43OTMtLjU3N3YtMi4yMzRjLTMuMzM4LjcyNi00LjAzMy0xLjQxNi00LjAzMy0xLjQxNi0uNTQ2LTEuMzg3LTEuMzMzLTEuNzU2LTEuMzMzLTEuNzU2LTEuMDg5LS43NDUuMDgzLS43MjkuMDgzLS43MjkgMS4yMDUuMDg0IDEuODM5IDEuMjM3IDEuODM5IDEuMjM3IDEuMDcgMS44MzQgMi44MDcgMS4zMDQgMy40OTIuOTk3LjEwNy0uNzc1LjQxOC0xLjMwNS43NjItMS42MDQtMi42NjUtLjMwNS01LjQ2Ny0xLjMzNC01LjQ2Ny01LjkzMSAwLTEuMzExLjQ2OS0yLjM4MSAxLjIzNi0zLjIyMS0uMTI0LS4zMDMtLjUzNS0xLjUyNC4xMTctMy4xNzYgMCAwIDEuMDA4LS4zMjIgMy4zMDEgMS4yMy45NTctLjI2NiAxLjk4My0uMzk5IDMuMDAzLS40MDQgMS4wMi4wMDUgMi4wNDcuMTM4IDMuMDA2LjQwNCAyLjI5MS0xLjU1MiAzLjI5Ny0xLjIzIDMuMjk3LTEuMjMuNjUzIDEuNjUzLjI0MiAyLjg3NC4xMTggMy4xNzYuNzcuODQgMS4yMzUgMS45MTEgMS4yMzUgMy4yMjEgMCA0LjYwOS0yLjgwNyA1LjYyNC01LjQ3OSA1LjkyMS40My4zNzIuODIzIDEuMTAyLjgyMyAyLjIyMnYzLjI5M2MwIC4zMTkuMTkyLjY5NC44MDEuNTc2IDQuNzY1LTEuNTg5IDguMTk5LTYuMDg2IDguMTk5LTExLjM4NiAwLTYuNjI3LTUuMzczLTEyLTEyLTEyeiI+PC9wYXRoPjwvc3ZnPg0K"
+                          alt="GitHub" width="20" height="20" style="display: block;">
                       </a>
                       <a href="mailto:luisefarfan.dev@gmail.com"
                         style="display: inline-block; margin: 0 8px; padding: 10px; background-color: #334155; border-radius: 8px; text-decoration: none;">
-                        <svg width="20" height="20" fill="none" stroke="#2dd4bf" viewBox="0 0 24 24"
-                          style="display: block;">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                          </path>
-                        </svg>
+                        <img
+                          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJkZDRiZiIgdmlld0JveD0iMCAwIDI0IDI0Ig0KICBzdHlsZT0iZGlzcGxheTogYmxvY2s7IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICA8cGF0aCBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiINCiAgICBkPSJNMyA4bDcuODkgNC4yNmEyIDIgMCAwMDIuMjIgMEwyMSA4TTUgMTloMTRhMiAyIDAgMDAyLTJWN2EyIDIgMCAwMC0yLTJINWEyIDIgMCAwMC0yIDJ2MTBhMiAyIDAgMDAyIDJ6Ij4NCiAgPC9wYXRoPg0KPC9zdmc+DQo="
+                          alt="Email" width="20" height="20" style="display: block;">
                       </a>
                       <a href="https://wa.link/ohwjr9"
                         style="display: inline-block; margin: 0 8px; padding: 10px; background-color: #334155; border-radius: 8px; text-decoration: none;">
-                        <svg fill="#2dd4bf" id="WhatsApp" viewBox="0 0 30.667 30.667" width="20" height="20"
-                          style="display: block;">
-                          <g id="WhatsApp_bgCarrier" stroke-width="0"></g>
-                          <g id="WhatsApp_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                          <g id="WhatsApp_iconCarrier">
-                            <g>
-                              <path
-                                d="M30.667,14.939c0,8.25-6.74,14.938-15.056,14.938c-2.639,0-5.118-0.675-7.276-1.857L0,30.667l2.717-8.017 c-1.37-2.25-2.159-4.892-2.159-7.712C0.559,6.688,7.297,0,15.613,0C23.928,0.002,30.667,6.689,30.667,14.939z M15.61,2.382 c-6.979,0-12.656,5.634-12.656,12.56c0,2.748,0.896,5.292,2.411,7.362l-1.58,4.663l4.862-1.545c2,1.312,4.393,2.076,6.963,2.076 c6.979,0,12.658-5.633,12.658-12.559C28.27,8.016,22.59,2.382,15.61,2.382z M23.214,18.38c-0.094-0.151-0.34-0.243-0.708-0.427 c-0.367-0.184-2.184-1.069-2.521-1.189c-0.34-0.123-0.586-0.185-0.832,0.182c-0.243,0.367-0.951,1.191-1.168,1.437 c-0.215,0.245-0.43,0.276-0.799,0.095c-0.369-0.186-1.559-0.57-2.969-1.817c-1.097-0.972-1.838-2.169-2.052-2.536 c-0.217-0.366-0.022-0.564,0.161-0.746c0.165-0.165,0.369-0.428,0.554-0.643c0.185-0.213,0.246-0.364,0.369-0.609 c0.121-0.245,0.06-0.458-0.031-0.643c-0.092-0.184-0.829-1.984-1.138-2.717c-0.307-0.732-0.614-0.611-0.83-0.611 c-0.215,0-0.461-0.03-0.707-0.03S9.897,8.215,9.56,8.582s-1.291,1.252-1.291,3.054c0,1.804,1.321,3.543,1.506,3.787 c0.186,0.243,2.554,4.062,6.305,5.528c3.753,1.465,3.753,0.976,4.429,0.914c0.678-0.062,2.184-0.885,2.49-1.739 C23.307,19.268,23.307,18.533,23.214,18.38z">
-                              </path>
-                            </g>
-                          </g>
-                        </svg>
+                        <img
+                          src="data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMmRkNGJmIiBpZD0iV2hhdHNBcHAiIHZpZXdCb3g9IjAgMCAzMC42NjcgMzAuNjY3IiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHN0eWxlPSJkaXNwbGF5OiBibG9jazsiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgaWQ9IldoYXRzQXBwX2JnQ2FycmllciIgc3Ryb2tlLXdpZHRoPSIwIj48L2c+PGcgaWQ9IldoYXRzQXBwX3RyYWNlckNhcnJpZXIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PC9nPjxnIGlkPSJXaGF0c0FwcF9pY29uQ2FycmllciI+PGc+PHBhdGggZD0iTTMwLjY2NywxNC45MzljMCw4LjI1LTYuNzQsMTQuOTM4LTE1LjA1NiwxNC45MzhjLTIuNjM5LDAtNS4xMTgtMC42NzUtNy4yNzYtMS44NTdMMCwzMC42NjdsMi43MTctOC4wMTcgYy0xLjM3LTIuMjUtMi4xNTktNC44OTItMi4xNTktNy43MTJDMC41NTksNi42ODgsNy4yOTcsMCwxNS42MTMsMEMyMy45MjgsMC4wMDIsMzAuNjY3LDYuNjg5LDMwLjY2NywxNC45Mzl6IE0xNS42MSwyLjM4MiBjLTYuOTc5LDAtMTIuNjU2LDUuNjM0LTEyLjY1NiwxMi41NmMwLDIuNzQ4LDAuODk2LDUuMjkyLDIuNDExLDcuMzYybC0xLjU4LDQuNjYzbDQuODYyLTEuNTQ1YzIsMS4zMTIsNC4zOTMsMi4wNzYsNi45NjMsMi4wNzYgYzYuOTc5LDAsMTIuNjU4LTUuNjMzLDEyLjY1OC0xMi41NTlDMjguMjcsOC4wMTYsMjIuNTksMi4zODIsMTUuNjEsMi4zODJ6IE0yMy4yMTQsMTguMzhjLTAuMDk0LTAuMTUxLTAuMzQtMC4yNDMtMC43MDgtMC40MjcgYy0wLjM2Ny0wLjE4NC0yLjE4NC0xLjA2OS0yLjUyMS0xLjE4OWMtMC4zNC0wLjEyMy0wLjU4Ni0wLjE4NS0wLjgzMiwwLjE4MmMtMC4yNDMsMC4zNjctMC45NTEsMS4xOTEtMS4xNjgsMS40MzcgYy0wLjIxNSwwLjI0NS0wLjQzLDAuMjc2LTAuNzk5LDAuMDk1Yy0wLjM2OS0wLjE4Ni0xLjU1OS0wLjU3LTIuOTY5LTEuODE3Yy0xLjA5Ny0wLjk3Mi0xLjgzOC0yLjE2OS0yLjA1Mi0yLjUzNiBjLTAuMjE3LTAuMzY2LTAuMDIyLTAuNTY0LDAuMTYxLTAuNzQ2YzAuMTY1LTAuMTY1LDAuMzY5LTAuNDI4LDAuNTU0LTAuNjQzYzAuMTg1LTAuMjEzLDAuMjQ2LTAuMzY0LDAuMzY5LTAuNjA5IGMwLjEyMS0wLjI0NSwwLjA2LTAuNDU4LTAuMDMxLTAuNjQzYy0wLjA5Mi0wLjE4NC0wLjgyOS0xLjk4NC0xLjEzOC0yLjcxN2MtMC4zMDctMC43MzItMC42MTQtMC42MTEtMC44My0wLjYxMSBjLTAuMjE1LDAtMC40NjEtMC4wMy0wLjcwNy0wLjAzUzkuODk3LDguMjE1LDkuNTYsOC41ODJzLTEuMjkxLDEuMjUyLTEuMjkxLDMuMDU0YzAsMS44MDQsMS4zMjEsMy41NDMsMS41MDYsMy43ODcgYzAuMTg2LDAuMjQzLDIuNTU0LDQuMDYyLDYuMzA1LDUuNTI4YzMuNzUzLDEuNDY1LDMuNzUzLDAuOTc2LDQuNDI5LDAuOTE0YzAuNjc4LTAuMDYyLDIuMTg0LTAuODg1LDIuNDktMS43MzkgQzIzLjMwNywxOS4yNjgsMjMuMzA3LDE4LjUzMywyMy4yMTQsMTguMzh6Ij48L3BhdGg+PC9nPjwvZz48L3N2Zz4NCg=="
+                          alt="WhatsApp" width="20" height="20" style="display: block;">
                       </a>
                     </div>
 
@@ -186,16 +163,9 @@ export const getEsAnswerEmail = (name: string, message: string) => `<body
                       style="display: inline-block; background-color: rgba(15, 23, 42, 0.2); padding: 12px 20px; border-radius: 8px; margin-bottom: 16px;">
                       <span
                         style="color: #ffffff; font-size: 24px; font-weight: bold; font-family: 'Courier New', monospace;">
-                        <svg width="64" viewBox="0 0 64 64">
-                          <path d="M18 16L8 16C6.89543 16 6 16.8954 6 18L6 46C6 47.1046 6.89543 48 8 48L18 48"
-                            stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"></path>
-
-                          <path d="M46 16L56 16C57.1046 16 58 16.8954 58 18L58 46C58 47.1046 57.1046 48 56 48L46 48"
-                            stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"></path>
-
-                          <text x="32" y="38" font-family="JetBrains Mono, monospace" font-size="16" font-weight="700"
-                            text-anchor="middle" fill="currentColor">LF</text>
-                        </svg>
+                        <img
+                          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCiAgPHBhdGggZD0iTTE4IDE2TDggMTZDNi44OTU0MyAxNiA2IDE2Ljg5NTQgNiAxOEw2IDQ2QzYgNDcuMTA0NiA2Ljg5NTQzIDQ4IDggNDhMMTggNDgiDQogICAgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+PC9wYXRoPg0KDQogIDxwYXRoIGQ9Ik00NiAxNkw1NiAxNkM1Ny4xMDQ2IDE2IDU4IDE2Ljg5NTQgNTggMThMNTggNDZDNTggNDcuMTA0NiA1Ny4xMDQ2IDQ4IDU2IDQ4TDQ2IDQ4Ig0KICAgIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiPjwvcGF0aD4NCg0KICA8dGV4dCB4PSIzMiIgeT0iMzgiIGZvbnQtZmFtaWx5PSJKZXRCcmFpbnMgTW9ubywgbW9ub3NwYWNlIiBmb250LXNpemU9IjE2IiBmb250LXdlaWdodD0iNzAwIg0KICAgIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmZmZmZmYiPkxGPC90ZXh0Pg0KPC9zdmc+DQo="
+                          alt="Luis Farfán" width="64" height="64" style="display: block;">
                       </span>
                     </div>
                     <h1
@@ -269,43 +239,27 @@ export const getEsAnswerEmail = (name: string, message: string) => `<body
                     <div style="margin-bottom: 20px;">
                       <a href="https://www.linkedin.com/in/luisefarfan/"
                         style="display: inline-block; margin: 0 8px; padding: 10px; background-color: #334155; border-radius: 8px; text-decoration: none; transition: background-color 0.2s;">
-                        <svg width="20" height="20" fill="#2dd4bf" viewBox="0 0 24 24" style="display: block;">
-                          <path
-                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z">
-                          </path>
-                        </svg>
+                        <img
+                          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9IiMyZGQ0YmYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3R5bGU9ImRpc3BsYXk6IGJsb2NrOyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0yMC40NDcgMjAuNDUyaC0zLjU1NHYtNS41NjljMC0xLjMyOC0uMDI3LTMuMDM3LTEuODUyLTMuMDM3LTEuODUzIDAtMi4xMzYgMS40NDUtMi4xMzYgMi45Mzl2NS42NjdIOS4zNTFWOWgzLjQxNHYxLjU2MWguMDQ2Yy40NzctLjkgMS42MzctMS44NSAzLjM3LTEuODUgMy42MDEgMCA0LjI2NyAyLjM3IDQuMjY3IDUuNDU1djYuMjg2ek01LjMzNyA3LjQzM2MtMS4xNDQgMC0yLjA2My0uOTI2LTIuMDYzLTIuMDY1IDAtMS4xMzguOTItMi4wNjMgMi4wNjMtMi4wNjMgMS4xNCAwIDIuMDY0LjkyNSAyLjA2NCAyLjA2MyAwIDEuMTM5LS45MjUgMi4wNjUtMi4wNjQgMi4wNjV6bTEuNzgyIDEzLjAxOUgzLjU1NVY5aDMuNTY0djExLjQ1MnpNMjIuMjI1IDBIMS43NzFDLjc5MiAwIDAgLjc3NCAwIDEuNzI5djIwLjU0MkMwIDIzLjIyNy43OTIgMjQgMS43NzEgMjRoMjAuNDUxQzIzLjIgMjQgMjQgMjMuMjI3IDI0IDIyLjI3MVYxLjcyOUMyNCAuNzc0IDIzLjIgMCAyMi4yMjIgMGguMDAzeiI+PC9wYXRoPg0KPC9zdmc+DQo="
+                          alt="LinkedIn" width="20" height="20" style="display: block;">
                       </a>
                       <a href="https://github.com/luisefarfan"
                         style="display: inline-block; margin: 0 8px; padding: 10px; background-color: #334155; border-radius: 8px; text-decoration: none;">
-                        <svg width="20" height="20" fill="#2dd4bf" viewBox="0 0 24 24" style="display: block;">
-                          <path
-                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z">
-                          </path>
-                        </svg>
+                        <img
+                          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9IiMyZGQ0YmYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3R5bGU9ImRpc3BsYXk6IGJsb2NrOyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIgMGMtNi42MjYgMC0xMiA1LjM3My0xMiAxMiAwIDUuMzAyIDMuNDM4IDkuOCA4LjIwNyAxMS4zODcuNTk5LjExMS43OTMtLjI2MS43OTMtLjU3N3YtMi4yMzRjLTMuMzM4LjcyNi00LjAzMy0xLjQxNi00LjAzMy0xLjQxNi0uNTQ2LTEuMzg3LTEuMzMzLTEuNzU2LTEuMzMzLTEuNzU2LTEuMDg5LS43NDUuMDgzLS43MjkuMDgzLS43MjkgMS4yMDUuMDg0IDEuODM5IDEuMjM3IDEuODM5IDEuMjM3IDEuMDcgMS44MzQgMi44MDcgMS4zMDQgMy40OTIuOTk3LjEwNy0uNzc1LjQxOC0xLjMwNS43NjItMS42MDQtMi42NjUtLjMwNS01LjQ2Ny0xLjMzNC01LjQ2Ny01LjkzMSAwLTEuMzExLjQ2OS0yLjM4MSAxLjIzNi0zLjIyMS0uMTI0LS4zMDMtLjUzNS0xLjUyNC4xMTctMy4xNzYgMCAwIDEuMDA4LS4zMjIgMy4zMDEgMS4yMy45NTctLjI2NiAxLjk4My0uMzk5IDMuMDAzLS40MDQgMS4wMi4wMDUgMi4wNDcuMTM4IDMuMDA2LjQwNCAyLjI5MS0xLjU1MiAzLjI5Ny0xLjIzIDMuMjk3LTEuMjMuNjUzIDEuNjUzLjI0MiAyLjg3NC4xMTggMy4xNzYuNzcuODQgMS4yMzUgMS45MTEgMS4yMzUgMy4yMjEgMCA0LjYwOS0yLjgwNyA1LjYyNC01LjQ3OSA1LjkyMS40My4zNzIuODIzIDEuMTAyLjgyMyAyLjIyMnYzLjI5M2MwIC4zMTkuMTkyLjY5NC44MDEuNTc2IDQuNzY1LTEuNTg5IDguMTk5LTYuMDg2IDguMTk5LTExLjM4NiAwLTYuNjI3LTUuMzczLTEyLTEyLTEyeiI+PC9wYXRoPjwvc3ZnPg0K"
+                          alt="GitHub" width="20" height="20" style="display: block;">
                       </a>
                       <a href="mailto:luisefarfan.dev@gmail.com"
                         style="display: inline-block; margin: 0 8px; padding: 10px; background-color: #334155; border-radius: 8px; text-decoration: none;">
-                        <svg width="20" height="20" fill="none" stroke="#2dd4bf" viewBox="0 0 24 24"
-                          style="display: block;">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                          </path>
-                        </svg>
+                        <img
+                          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJkZDRiZiIgdmlld0JveD0iMCAwIDI0IDI0Ig0KICBzdHlsZT0iZGlzcGxheTogYmxvY2s7IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICA8cGF0aCBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiINCiAgICBkPSJNMyA4bDcuODkgNC4yNmEyIDIgMCAwMDIuMjIgMEwyMSA4TTUgMTloMTRhMiAyIDAgMDAyLTJWN2EyIDIgMCAwMC0yLTJINWEyIDIgMCAwMC0yIDJ2MTBhMiAyIDAgMDAyIDJ6Ij4NCiAgPC9wYXRoPg0KPC9zdmc+DQo="
+                          alt="Email" width="20" height="20" style="display: block;">
                       </a>
                       <a href="https://wa.link/b3lr25"
                         style="display: inline-block; margin: 0 8px; padding: 10px; background-color: #334155; border-radius: 8px; text-decoration: none;">
-                        <svg fill="#2dd4bf" id="WhatsApp" viewBox="0 0 30.667 30.667" width="20" height="20"
-                          style="display: block;">
-                          <g id="WhatsApp_bgCarrier" stroke-width="0"></g>
-                          <g id="WhatsApp_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                          <g id="WhatsApp_iconCarrier">
-                            <g>
-                              <path
-                                d="M30.667,14.939c0,8.25-6.74,14.938-15.056,14.938c-2.639,0-5.118-0.675-7.276-1.857L0,30.667l2.717-8.017 c-1.37-2.25-2.159-4.892-2.159-7.712C0.559,6.688,7.297,0,15.613,0C23.928,0.002,30.667,6.689,30.667,14.939z M15.61,2.382 c-6.979,0-12.656,5.634-12.656,12.56c0,2.748,0.896,5.292,2.411,7.362l-1.58,4.663l4.862-1.545c2,1.312,4.393,2.076,6.963,2.076 c6.979,0,12.658-5.633,12.658-12.559C28.27,8.016,22.59,2.382,15.61,2.382z M23.214,18.38c-0.094-0.151-0.34-0.243-0.708-0.427 c-0.367-0.184-2.184-1.069-2.521-1.189c-0.34-0.123-0.586-0.185-0.832,0.182c-0.243,0.367-0.951,1.191-1.168,1.437 c-0.215,0.245-0.43,0.276-0.799,0.095c-0.369-0.186-1.559-0.57-2.969-1.817c-1.097-0.972-1.838-2.169-2.052-2.536 c-0.217-0.366-0.022-0.564,0.161-0.746c0.165-0.165,0.369-0.428,0.554-0.643c0.185-0.213,0.246-0.364,0.369-0.609 c0.121-0.245,0.06-0.458-0.031-0.643c-0.092-0.184-0.829-1.984-1.138-2.717c-0.307-0.732-0.614-0.611-0.83-0.611 c-0.215,0-0.461-0.03-0.707-0.03S9.897,8.215,9.56,8.582s-1.291,1.252-1.291,3.054c0,1.804,1.321,3.543,1.506,3.787 c0.186,0.243,2.554,4.062,6.305,5.528c3.753,1.465,3.753,0.976,4.429,0.914c0.678-0.062,2.184-0.885,2.49-1.739 C23.307,19.268,23.307,18.533,23.214,18.38z">
-                              </path>
-                            </g>
-                          </g>
-                        </svg>
+                        <img
+                          src="data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMmRkNGJmIiBpZD0iV2hhdHNBcHAiIHZpZXdCb3g9IjAgMCAzMC42NjcgMzAuNjY3IiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHN0eWxlPSJkaXNwbGF5OiBibG9jazsiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgaWQ9IldoYXRzQXBwX2JnQ2FycmllciIgc3Ryb2tlLXdpZHRoPSIwIj48L2c+PGcgaWQ9IldoYXRzQXBwX3RyYWNlckNhcnJpZXIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PC9nPjxnIGlkPSJXaGF0c0FwcF9pY29uQ2FycmllciI+PGc+PHBhdGggZD0iTTMwLjY2NywxNC45MzljMCw4LjI1LTYuNzQsMTQuOTM4LTE1LjA1NiwxNC45MzhjLTIuNjM5LDAtNS4xMTgtMC42NzUtNy4yNzYtMS44NTdMMCwzMC42NjdsMi43MTctOC4wMTcgYy0xLjM3LTIuMjUtMi4xNTktNC44OTItMi4xNTktNy43MTJDMC41NTksNi42ODgsNy4yOTcsMCwxNS42MTMsMEMyMy45MjgsMC4wMDIsMzAuNjY3LDYuNjg5LDMwLjY2NywxNC45Mzl6IE0xNS42MSwyLjM4MiBjLTYuOTc5LDAtMTIuNjU2LDUuNjM0LTEyLjY1NiwxMi41NmMwLDIuNzQ4LDAuODk2LDUuMjkyLDIuNDExLDcuMzYybC0xLjU4LDQuNjYzbDQuODYyLTEuNTQ1YzIsMS4zMTIsNC4zOTMsMi4wNzYsNi45NjMsMi4wNzYgYzYuOTc5LDAsMTIuNjU4LTUuNjMzLDEyLjY1OC0xMi41NTlDMjguMjcsOC4wMTYsMjIuNTksMi4zODIsMTUuNjEsMi4zODJ6IE0yMy4yMTQsMTguMzhjLTAuMDk0LTAuMTUxLTAuMzQtMC4yNDMtMC43MDgtMC40MjcgYy0wLjM2Ny0wLjE4NC0yLjE4NC0xLjA2OS0yLjUyMS0xLjE4OWMtMC4zNC0wLjEyMy0wLjU4Ni0wLjE4NS0wLjgzMiwwLjE4MmMtMC4yNDMsMC4zNjctMC45NTEsMS4xOTEtMS4xNjgsMS40MzcgYy0wLjIxNSwwLjI0NS0wLjQzLDAuMjc2LTAuNzk5LDAuMDk1Yy0wLjM2OS0wLjE4Ni0xLjU1OS0wLjU3LTIuOTY5LTEuODE3Yy0xLjA5Ny0wLjk3Mi0xLjgzOC0yLjE2OS0yLjA1Mi0yLjUzNiBjLTAuMjE3LTAuMzY2LTAuMDIyLTAuNTY0LDAuMTYxLTAuNzQ2YzAuMTY1LTAuMTY1LDAuMzY5LTAuNDI4LDAuNTU0LTAuNjQzYzAuMTg1LTAuMjEzLDAuMjQ2LTAuMzY0LDAuMzY5LTAuNjA5IGMwLjEyMS0wLjI0NSwwLjA2LTAuNDU4LTAuMDMxLTAuNjQzYy0wLjA5Mi0wLjE4NC0wLjgyOS0xLjk4NC0xLjEzOC0yLjcxN2MtMC4zMDctMC43MzItMC42MTQtMC42MTEtMC44My0wLjYxMSBjLTAuMjE1LDAtMC40NjEtMC4wMy0wLjcwNy0wLjAzUzkuODk3LDguMjE1LDkuNTYsOC41ODJzLTEuMjkxLDEuMjUyLTEuMjkxLDMuMDU0YzAsMS44MDQsMS4zMjEsMy41NDMsMS41MDYsMy43ODcgYzAuMTg2LDAuMjQzLDIuNTU0LDQuMDYyLDYuMzA1LDUuNTI4YzMuNzUzLDEuNDY1LDMuNzUzLDAuOTc2LDQuNDI5LDAuOTE0YzAuNjc4LTAuMDYyLDIuMTg0LTAuODg1LDIuNDktMS43MzkgQzIzLjMwNywxOS4yNjgsMjMuMzA3LDE4LjUzMywyMy4yMTQsMTguMzh6Ij48L3BhdGg+PC9nPjwvZz48L3N2Zz4NCg=="
+                          alt="WhatsApp" width="20" height="20" style="display: block;">
                       </a>
                     </div>
 
