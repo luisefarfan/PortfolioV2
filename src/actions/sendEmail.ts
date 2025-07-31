@@ -3,23 +3,12 @@ import { z } from 'astro:schema';
 import { Resend } from "resend";
 import { createAssessment } from "@lib/reCaptcha";
 import { REQUEST_CONTACT_ACTION } from "@constants/index";
+import { getEnAnswerEmail, getEsAnswerEmail } from "./emails/answerEmails";
 
 const getEmailMessage = (name: string, message: string, lang: 'en' | 'es'): string => {
   const emailMessages = {
-    es: `
-      <p>Hola ${name},</p>
-      <p>Gracias por ponerte en contacto! Aquí tienes una copia de tu mensaje:</p>
-      <blockquote>${message}</blockquote>
-      <p>Me pondré en contacto contigo lo antes posible.</p>
-    <p>Saludos,<br />Luis Enrique Farfán</p>
-  `,
-    en: `
-    <p>Hi ${name},</p>
-    <p>Thank you for reaching out! Here's a copy of your message:</p>
-    <blockquote>${message}</blockquote>
-    <p>I will get back to you as soon as possible.</p>
-    <p>Best regards,<br />Luis Enrique Farfán</p>
-  `
+    es: getEsAnswerEmail(name, message),
+    en: getEnAnswerEmail(name, message)
   }
 
   return emailMessages[lang];
@@ -50,9 +39,9 @@ export const sendEmailAction = defineAction({
 
       const emailMessage = getEmailMessage(name, message, lang);
       const { data, error } = await resendClient.emails.send({
-        from: 'Luis Enrique Farfán <dev@luisefarfan.com>',
+        from: 'Luis Enrique Farfán Prado<no-reply@luisefarfan.com>',
         to: email,
-        subject: 'Thank you for contacting me',
+        subject: lang === 'es' ? `Gracias por contactarme, ${name}! | Luis Farfán` : `Thank you for reaching out, ${name}! | Luis Farfan`,
         html: emailMessage
       })
 
