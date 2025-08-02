@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/db": "^0.16.0",
     "@astrojs/vercel": "^8.2.3",
     "@google-cloud/recaptcha-enterprise": "^6.3.0",
     "@midudev/tailwind-animations": "^0.2.0",
