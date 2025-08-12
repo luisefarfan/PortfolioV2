@@ -15,15 +15,6 @@ export const getEnAnswerEmail = (name: string, message: string) => `<body
                 <tr>
                   <td align="center">
                     <!-- Logo/Brand -->
-                    <div
-                      style="display: inline-block; background-color: rgba(15, 23, 42, 0.2); padding: 12px 20px; border-radius: 8px; margin-bottom: 16px;">
-                      <span
-                        style="color: #ffffff; font-size: 24px; font-weight: bold; font-family: 'Courier New', monospace;">
-                        <img
-                          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCiAgPHBhdGggZD0iTTE4IDE2TDggMTZDNi44OTU0MyAxNiA2IDE2Ljg5NTQgNiAxOEw2IDQ2QzYgNDcuMTA0NiA2Ljg5NTQzIDQ4IDggNDhMMTggNDgiDQogICAgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+PC9wYXRoPg0KDQogIDxwYXRoIGQ9Ik00NiAxNkw1NiAxNkM1Ny4xMDQ2IDE2IDU4IDE2Ljg5NTQgNTggMThMNTggNDZDNTggNDcuMTA0NiA1Ny4xMDQ2IDQ4IDU2IDQ4TDQ2IDQ4Ig0KICAgIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiPjwvcGF0aD4NCg0KICA8dGV4dCB4PSIzMiIgeT0iMzgiIGZvbnQtZmFtaWx5PSJKZXRCcmFpbnMgTW9ubywgbW9ub3NwYWNlIiBmb250LXNpemU9IjE2IiBmb250LXdlaWdodD0iNzAwIg0KICAgIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmZmZmZmYiPkxGPC90ZXh0Pg0KPC9zdmc+DQo="
-                          alt="Luis Farfan" width="64" height="64" style="display: block;">
-                      </span>
-                    </div>
                     <h1
                       style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">
                       Luis Farfan
@@ -91,40 +82,24 @@ export const getEnAnswerEmail = (name: string, message: string) => `<body
               <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                 <tr>
                   <td align="center">
-                    <!-- Social Links -->
-                    <div style="margin-bottom: 20px;">
-                      <a href="https://www.linkedin.com/in/luisefarfan/"
-                        style="display: inline-block; margin: 0 8px; padding: 10px; background-color: #334155; border-radius: 8px; text-decoration: none; transition: background-color 0.2s;">
-                        <img
-                          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9IiMyZGQ0YmYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3R5bGU9ImRpc3BsYXk6IGJsb2NrOyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0yMC40NDcgMjAuNDUyaC0zLjU1NHYtNS41NjljMC0xLjMyOC0uMDI3LTMuMDM3LTEuODUyLTMuMDM3LTEuODUzIDAtMi4xMzYgMS40NDUtMi4xMzYgMi45Mzl2NS42NjdIOS4zNTFWOWgzLjQxNHYxLjU2MWguMDQ2Yy40NzctLjkgMS42MzctMS44NSAzLjM3LTEuODUgMy42MDEgMCA0LjI2NyAyLjM3IDQuMjY3IDUuNDU1djYuMjg2ek01LjMzNyA3LjQzM2MtMS4xNDQgMC0yLjA2My0uOTI2LTIuMDYzLTIuMDY1IDAtMS4xMzguOTItMi4wNjMgMi4wNjMtMi4wNjMgMS4xNCAwIDIuMDY0LjkyNSAyLjA2NCAyLjA2MyAwIDEuMTM5LS45MjUgMi4wNjUtMi4wNjQgMi4wNjV6bTEuNzgyIDEzLjAxOUgzLjU1NVY5aDMuNTY0djExLjQ1MnpNMjIuMjI1IDBIMS43NzFDLjc5MiAwIDAgLjc3NCAwIDEuNzI5djIwLjU0MkMwIDIzLjIyNy43OTIgMjQgMS43NzEgMjRoMjAuNDUxQzIzLjIgMjQgMjQgMjMuMjI3IDI0IDIyLjI3MVYxLjcyOUMyNCAuNzc0IDIzLjIgMCAyMi4yMjIgMGguMDAzeiI+PC9wYXRoPg0KPC9zdmc+DQo="
-                          alt="LinkedIn" width="20" height="20" style="display: block;">
+                    <p style="margin: 0 0 16px 0; color: #94a3b8; font-size: 14px;">
+                      <a href="https://www.linkedin.com/in/luisefarfan/" style="color: #2dd4bf; text-decoration: none;">
+                        LinkedIn
+                      </a><span style="margin: 0 8px; color: #64748b;">|</span>
+                      <a href="https://github.com/luisefarfan" style="color: #2dd4bf; text-decoration: none;">
+                        GitHub
                       </a>
-                      <a href="https://github.com/luisefarfan"
-                        style="display: inline-block; margin: 0 8px; padding: 10px; background-color: #334155; border-radius: 8px; text-decoration: none;">
-                        <img
-                          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9IiMyZGQ0YmYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3R5bGU9ImRpc3BsYXk6IGJsb2NrOyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIgMGMtNi42MjYgMC0xMiA1LjM3My0xMiAxMiAwIDUuMzAyIDMuNDM4IDkuOCA4LjIwNyAxMS4zODcuNTk5LjExMS43OTMtLjI2MS43OTMtLjU3N3YtMi4yMzRjLTMuMzM4LjcyNi00LjAzMy0xLjQxNi00LjAzMy0xLjQxNi0uNTQ2LTEuMzg3LTEuMzMzLTEuNzU2LTEuMzMzLTEuNzU2LTEuMDg5LS43NDUuMDgzLS43MjkuMDgzLS43MjkgMS4yMDUuMDg0IDEuODM5IDEuMjM3IDEuODM5IDEuMjM3IDEuMDcgMS44MzQgMi44MDcgMS4zMDQgMy40OTIuOTk3LjEwNy0uNzc1LjQxOC0xLjMwNS43NjItMS42MDQtMi42NjUtLjMwNS01LjQ2Ny0xLjMzNC01LjQ2Ny01LjkzMSAwLTEuMzExLjQ2OS0yLjM4MSAxLjIzNi0zLjIyMS0uMTI0LS4zMDMtLjUzNS0xLjUyNC4xMTctMy4xNzYgMCAwIDEuMDA4LS4zMjIgMy4zMDEgMS4yMy45NTctLjI2NiAxLjk4My0uMzk5IDMuMDAzLS40MDQgMS4wMi4wMDUgMi4wNDcuMTM4IDMuMDA2LjQwNCAyLjI5MS0xLjU1MiAzLjI5Ny0xLjIzIDMuMjk3LTEuMjMuNjUzIDEuNjUzLjI0MiAyLjg3NC4xMTggMy4xNzYuNzcuODQgMS4yMzUgMS45MTEgMS4yMzUgMy4yMjEgMCA0LjYwOS0yLjgwNyA1LjYyNC01LjQ3OSA1LjkyMS40My4zNzIuODIzIDEuMTAyLjgyMyAyLjIyMnYzLjI5M2MwIC4zMTkuMTkyLjY5NC44MDEuNTc2IDQuNzY1LTEuNTg5IDguMTk5LTYuMDg2IDguMTk5LTExLjM4NiAwLTYuNjI3LTUuMzczLTEyLTEyLTEyeiI+PC9wYXRoPjwvc3ZnPg0K"
-                          alt="GitHub" width="20" height="20" style="display: block;">
-                      </a>
-                      <a href="mailto:luisefarfan.dev@gmail.com"
-                        style="display: inline-block; margin: 0 8px; padding: 10px; background-color: #334155; border-radius: 8px; text-decoration: none;">
-                        <img
-                          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJkZDRiZiIgdmlld0JveD0iMCAwIDI0IDI0Ig0KICBzdHlsZT0iZGlzcGxheTogYmxvY2s7IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICA8cGF0aCBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiINCiAgICBkPSJNMyA4bDcuODkgNC4yNmEyIDIgMCAwMDIuMjIgMEwyMSA4TTUgMTloMTRhMiAyIDAgMDAyLTJWN2EyIDIgMCAwMC0yLTJINWEyIDIgMCAwMC0yIDJ2MTBhMiAyIDAgMDAyIDJ6Ij4NCiAgPC9wYXRoPg0KPC9zdmc+DQo="
-                          alt="Email" width="20" height="20" style="display: block;">
-                      </a>
-                      <a href="https://wa.link/ohwjr9"
-                        style="display: inline-block; margin: 0 8px; padding: 10px; background-color: #334155; border-radius: 8px; text-decoration: none;">
-                        <img
-                          src="data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMmRkNGJmIiBpZD0iV2hhdHNBcHAiIHZpZXdCb3g9IjAgMCAzMC42NjcgMzAuNjY3IiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHN0eWxlPSJkaXNwbGF5OiBibG9jazsiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgaWQ9IldoYXRzQXBwX2JnQ2FycmllciIgc3Ryb2tlLXdpZHRoPSIwIj48L2c+PGcgaWQ9IldoYXRzQXBwX3RyYWNlckNhcnJpZXIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PC9nPjxnIGlkPSJXaGF0c0FwcF9pY29uQ2FycmllciI+PGc+PHBhdGggZD0iTTMwLjY2NywxNC45MzljMCw4LjI1LTYuNzQsMTQuOTM4LTE1LjA1NiwxNC45MzhjLTIuNjM5LDAtNS4xMTgtMC42NzUtNy4yNzYtMS44NTdMMCwzMC42NjdsMi43MTctOC4wMTcgYy0xLjM3LTIuMjUtMi4xNTktNC44OTItMi4xNTktNy43MTJDMC41NTksNi42ODgsNy4yOTcsMCwxNS42MTMsMEMyMy45MjgsMC4wMDIsMzAuNjY3LDYuNjg5LDMwLjY2NywxNC45Mzl6IE0xNS42MSwyLjM4MiBjLTYuOTc5LDAtMTIuNjU2LDUuNjM0LTEyLjY1NiwxMi41NmMwLDIuNzQ4LDAuODk2LDUuMjkyLDIuNDExLDcuMzYybC0xLjU4LDQuNjYzbDQuODYyLTEuNTQ1YzIsMS4zMTIsNC4zOTMsMi4wNzYsNi45NjMsMi4wNzYgYzYuOTc5LDAsMTIuNjU4LTUuNjMzLDEyLjY1OC0xMi41NTlDMjguMjcsOC4wMTYsMjIuNTksMi4zODIsMTUuNjEsMi4zODJ6IE0yMy4yMTQsMTguMzhjLTAuMDk0LTAuMTUxLTAuMzQtMC4yNDMtMC43MDgtMC40MjcgYy0wLjM2Ny0wLjE4NC0yLjE4NC0xLjA2OS0yLjUyMS0xLjE4OWMtMC4zNC0wLjEyMy0wLjU4Ni0wLjE4NS0wLjgzMiwwLjE4MmMtMC4yNDMsMC4zNjctMC45NTEsMS4xOTEtMS4xNjgsMS40MzcgYy0wLjIxNSwwLjI0NS0wLjQzLDAuMjc2LTAuNzk5LDAuMDk1Yy0wLjM2OS0wLjE4Ni0xLjU1OS0wLjU3LTIuOTY5LTEuODE3Yy0xLjA5Ny0wLjk3Mi0xLjgzOC0yLjE2OS0yLjA1Mi0yLjUzNiBjLTAuMjE3LTAuMzY2LTAuMDIyLTAuNTY0LDAuMTYxLTAuNzQ2YzAuMTY1LTAuMTY1LDAuMzY5LTAuNDI4LDAuNTU0LTAuNjQzYzAuMTg1LTAuMjEzLDAuMjQ2LTAuMzY0LDAuMzY5LTAuNjA5IGMwLjEyMS0wLjI0NSwwLjA2LTAuNDU4LTAuMDMxLTAuNjQzYy0wLjA5Mi0wLjE4NC0wLjgyOS0xLjk4NC0xLjEzOC0yLjcxN2MtMC4zMDctMC43MzItMC42MTQtMC42MTEtMC44My0wLjYxMSBjLTAuMjE1LDAtMC40NjEtMC4wMy0wLjcwNy0wLjAzUzkuODk3LDguMjE1LDkuNTYsOC41ODJzLTEuMjkxLDEuMjUyLTEuMjkxLDMuMDU0YzAsMS44MDQsMS4zMjEsMy41NDMsMS41MDYsMy43ODcgYzAuMTg2LDAuMjQzLDIuNTU0LDQuMDYyLDYuMzA1LDUuNTI4YzMuNzUzLDEuNDY1LDMuNzUzLDAuOTc2LDQuNDI5LDAuOTE0YzAuNjc4LTAuMDYyLDIuMTg0LTAuODg1LDIuNDktMS43MzkgQzIzLjMwNywxOS4yNjgsMjMuMzA3LDE4LjUzMywyMy4yMTQsMTguMzh6Ij48L3BhdGg+PC9nPjwvZz48L3N2Zz4NCg=="
-                          alt="WhatsApp" width="20" height="20" style="display: block;">
-                      </a>
-                    </div>
+                    </p>
 
                     <!-- Contact Info -->
                     <p style="margin: 0 0 16px 0; color: #94a3b8; font-size: 14px;">
+                      <a href="https://wa.link/b3lr25" style="color: #2dd4bf; text-decoration: none;">
+                        WhatsApp
+                      </a><span style="margin: 0 8px; color: #64748b;">|</span>
+                      <a href="tel:+50242980332" style="color: #2dd4bf; text-decoration: none;">+502 4298 0332</a>
+                      <span style="margin: 0 8px; color: #64748b;">|</span>
                       <a href="mailto:luisefarfan.dev@gmail.com"
                         style="color: #2dd4bf; text-decoration: none;">luisefarfan.dev@gmail.com</a>
-                      <span style="margin: 0 8px; color: #64748b;">|</span>
-                      <a href="tel:+50242980332" style="color: #2dd4bf; text-decoration: none;">+502 4298 0332</a>
                     </p>
 
                     <!-- Footer Text -->
@@ -159,15 +134,6 @@ export const getEsAnswerEmail = (name: string, message: string) => `<body
                 <tr>
                   <td align="center">
                     <!-- Logo/Brand -->
-                    <div
-                      style="display: inline-block; background-color: rgba(15, 23, 42, 0.2); padding: 12px 20px; border-radius: 8px; margin-bottom: 16px;">
-                      <span
-                        style="color: #ffffff; font-size: 24px; font-weight: bold; font-family: 'Courier New', monospace;">
-                        <img
-                          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCiAgPHBhdGggZD0iTTE4IDE2TDggMTZDNi44OTU0MyAxNiA2IDE2Ljg5NTQgNiAxOEw2IDQ2QzYgNDcuMTA0NiA2Ljg5NTQzIDQ4IDggNDhMMTggNDgiDQogICAgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+PC9wYXRoPg0KDQogIDxwYXRoIGQ9Ik00NiAxNkw1NiAxNkM1Ny4xMDQ2IDE2IDU4IDE2Ljg5NTQgNTggMThMNTggNDZDNTggNDcuMTA0NiA1Ny4xMDQ2IDQ4IDU2IDQ4TDQ2IDQ4Ig0KICAgIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiPjwvcGF0aD4NCg0KICA8dGV4dCB4PSIzMiIgeT0iMzgiIGZvbnQtZmFtaWx5PSJKZXRCcmFpbnMgTW9ubywgbW9ub3NwYWNlIiBmb250LXNpemU9IjE2IiBmb250LXdlaWdodD0iNzAwIg0KICAgIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmZmZmZmYiPkxGPC90ZXh0Pg0KPC9zdmc+DQo="
-                          alt="Luis Farfán" width="64" height="64" style="display: block;">
-                      </span>
-                    </div>
                     <h1
                       style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">
                       Luis Farfán
@@ -235,40 +201,24 @@ export const getEsAnswerEmail = (name: string, message: string) => `<body
               <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                 <tr>
                   <td align="center">
-                    <!-- Social Links -->
-                    <div style="margin-bottom: 20px;">
-                      <a href="https://www.linkedin.com/in/luisefarfan/"
-                        style="display: inline-block; margin: 0 8px; padding: 10px; background-color: #334155; border-radius: 8px; text-decoration: none; transition: background-color 0.2s;">
-                        <img
-                          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9IiMyZGQ0YmYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3R5bGU9ImRpc3BsYXk6IGJsb2NrOyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0yMC40NDcgMjAuNDUyaC0zLjU1NHYtNS41NjljMC0xLjMyOC0uMDI3LTMuMDM3LTEuODUyLTMuMDM3LTEuODUzIDAtMi4xMzYgMS40NDUtMi4xMzYgMi45Mzl2NS42NjdIOS4zNTFWOWgzLjQxNHYxLjU2MWguMDQ2Yy40NzctLjkgMS42MzctMS44NSAzLjM3LTEuODUgMy42MDEgMCA0LjI2NyAyLjM3IDQuMjY3IDUuNDU1djYuMjg2ek01LjMzNyA3LjQzM2MtMS4xNDQgMC0yLjA2My0uOTI2LTIuMDYzLTIuMDY1IDAtMS4xMzguOTItMi4wNjMgMi4wNjMtMi4wNjMgMS4xNCAwIDIuMDY0LjkyNSAyLjA2NCAyLjA2MyAwIDEuMTM5LS45MjUgMi4wNjUtMi4wNjQgMi4wNjV6bTEuNzgyIDEzLjAxOUgzLjU1NVY5aDMuNTY0djExLjQ1MnpNMjIuMjI1IDBIMS43NzFDLjc5MiAwIDAgLjc3NCAwIDEuNzI5djIwLjU0MkMwIDIzLjIyNy43OTIgMjQgMS43NzEgMjRoMjAuNDUxQzIzLjIgMjQgMjQgMjMuMjI3IDI0IDIyLjI3MVYxLjcyOUMyNCAuNzc0IDIzLjIgMCAyMi4yMjIgMGguMDAzeiI+PC9wYXRoPg0KPC9zdmc+DQo="
-                          alt="LinkedIn" width="20" height="20" style="display: block;">
+                    <p style="margin: 0 0 16px 0; color: #94a3b8; font-size: 14px;">
+                      <a href="https://www.linkedin.com/in/luisefarfan/" style="color: #2dd4bf; text-decoration: none;">
+                        LinkedIn
+                      </a><span style="margin: 0 8px; color: #64748b;">|</span>
+                      <a href="https://github.com/luisefarfan" style="color: #2dd4bf; text-decoration: none;">
+                        GitHub
                       </a>
-                      <a href="https://github.com/luisefarfan"
-                        style="display: inline-block; margin: 0 8px; padding: 10px; background-color: #334155; border-radius: 8px; text-decoration: none;">
-                        <img
-                          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9IiMyZGQ0YmYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3R5bGU9ImRpc3BsYXk6IGJsb2NrOyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIgMGMtNi42MjYgMC0xMiA1LjM3My0xMiAxMiAwIDUuMzAyIDMuNDM4IDkuOCA4LjIwNyAxMS4zODcuNTk5LjExMS43OTMtLjI2MS43OTMtLjU3N3YtMi4yMzRjLTMuMzM4LjcyNi00LjAzMy0xLjQxNi00LjAzMy0xLjQxNi0uNTQ2LTEuMzg3LTEuMzMzLTEuNzU2LTEuMzMzLTEuNzU2LTEuMDg5LS43NDUuMDgzLS43MjkuMDgzLS43MjkgMS4yMDUuMDg0IDEuODM5IDEuMjM3IDEuODM5IDEuMjM3IDEuMDcgMS44MzQgMi44MDcgMS4zMDQgMy40OTIuOTk3LjEwNy0uNzc1LjQxOC0xLjMwNS43NjItMS42MDQtMi42NjUtLjMwNS01LjQ2Ny0xLjMzNC01LjQ2Ny01LjkzMSAwLTEuMzExLjQ2OS0yLjM4MSAxLjIzNi0zLjIyMS0uMTI0LS4zMDMtLjUzNS0xLjUyNC4xMTctMy4xNzYgMCAwIDEuMDA4LS4zMjIgMy4zMDEgMS4yMy45NTctLjI2NiAxLjk4My0uMzk5IDMuMDAzLS40MDQgMS4wMi4wMDUgMi4wNDcuMTM4IDMuMDA2LjQwNCAyLjI5MS0xLjU1MiAzLjI5Ny0xLjIzIDMuMjk3LTEuMjMuNjUzIDEuNjUzLjI0MiAyLjg3NC4xMTggMy4xNzYuNzcuODQgMS4yMzUgMS45MTEgMS4yMzUgMy4yMjEgMCA0LjYwOS0yLjgwNyA1LjYyNC01LjQ3OSA1LjkyMS40My4zNzIuODIzIDEuMTAyLjgyMyAyLjIyMnYzLjI5M2MwIC4zMTkuMTkyLjY5NC44MDEuNTc2IDQuNzY1LTEuNTg5IDguMTk5LTYuMDg2IDguMTk5LTExLjM4NiAwLTYuNjI3LTUuMzczLTEyLTEyLTEyeiI+PC9wYXRoPjwvc3ZnPg0K"
-                          alt="GitHub" width="20" height="20" style="display: block;">
-                      </a>
-                      <a href="mailto:luisefarfan.dev@gmail.com"
-                        style="display: inline-block; margin: 0 8px; padding: 10px; background-color: #334155; border-radius: 8px; text-decoration: none;">
-                        <img
-                          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJkZDRiZiIgdmlld0JveD0iMCAwIDI0IDI0Ig0KICBzdHlsZT0iZGlzcGxheTogYmxvY2s7IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICA8cGF0aCBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiINCiAgICBkPSJNMyA4bDcuODkgNC4yNmEyIDIgMCAwMDIuMjIgMEwyMSA4TTUgMTloMTRhMiAyIDAgMDAyLTJWN2EyIDIgMCAwMC0yLTJINWEyIDIgMCAwMC0yIDJ2MTBhMiAyIDAgMDAyIDJ6Ij4NCiAgPC9wYXRoPg0KPC9zdmc+DQo="
-                          alt="Email" width="20" height="20" style="display: block;">
-                      </a>
-                      <a href="https://wa.link/b3lr25"
-                        style="display: inline-block; margin: 0 8px; padding: 10px; background-color: #334155; border-radius: 8px; text-decoration: none;">
-                        <img
-                          src="data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMmRkNGJmIiBpZD0iV2hhdHNBcHAiIHZpZXdCb3g9IjAgMCAzMC42NjcgMzAuNjY3IiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHN0eWxlPSJkaXNwbGF5OiBibG9jazsiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgaWQ9IldoYXRzQXBwX2JnQ2FycmllciIgc3Ryb2tlLXdpZHRoPSIwIj48L2c+PGcgaWQ9IldoYXRzQXBwX3RyYWNlckNhcnJpZXIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PC9nPjxnIGlkPSJXaGF0c0FwcF9pY29uQ2FycmllciI+PGc+PHBhdGggZD0iTTMwLjY2NywxNC45MzljMCw4LjI1LTYuNzQsMTQuOTM4LTE1LjA1NiwxNC45MzhjLTIuNjM5LDAtNS4xMTgtMC42NzUtNy4yNzYtMS44NTdMMCwzMC42NjdsMi43MTctOC4wMTcgYy0xLjM3LTIuMjUtMi4xNTktNC44OTItMi4xNTktNy43MTJDMC41NTksNi42ODgsNy4yOTcsMCwxNS42MTMsMEMyMy45MjgsMC4wMDIsMzAuNjY3LDYuNjg5LDMwLjY2NywxNC45Mzl6IE0xNS42MSwyLjM4MiBjLTYuOTc5LDAtMTIuNjU2LDUuNjM0LTEyLjY1NiwxMi41NmMwLDIuNzQ4LDAuODk2LDUuMjkyLDIuNDExLDcuMzYybC0xLjU4LDQuNjYzbDQuODYyLTEuNTQ1YzIsMS4zMTIsNC4zOTMsMi4wNzYsNi45NjMsMi4wNzYgYzYuOTc5LDAsMTIuNjU4LTUuNjMzLDEyLjY1OC0xMi41NTlDMjguMjcsOC4wMTYsMjIuNTksMi4zODIsMTUuNjEsMi4zODJ6IE0yMy4yMTQsMTguMzhjLTAuMDk0LTAuMTUxLTAuMzQtMC4yNDMtMC43MDgtMC40MjcgYy0wLjM2Ny0wLjE4NC0yLjE4NC0xLjA2OS0yLjUyMS0xLjE4OWMtMC4zNC0wLjEyMy0wLjU4Ni0wLjE4NS0wLjgzMiwwLjE4MmMtMC4yNDMsMC4zNjctMC45NTEsMS4xOTEtMS4xNjgsMS40MzcgYy0wLjIxNSwwLjI0NS0wLjQzLDAuMjc2LTAuNzk5LDAuMDk1Yy0wLjM2OS0wLjE4Ni0xLjU1OS0wLjU3LTIuOTY5LTEuODE3Yy0xLjA5Ny0wLjk3Mi0xLjgzOC0yLjE2OS0yLjA1Mi0yLjUzNiBjLTAuMjE3LTAuMzY2LTAuMDIyLTAuNTY0LDAuMTYxLTAuNzQ2YzAuMTY1LTAuMTY1LDAuMzY5LTAuNDI4LDAuNTU0LTAuNjQzYzAuMTg1LTAuMjEzLDAuMjQ2LTAuMzY0LDAuMzY5LTAuNjA5IGMwLjEyMS0wLjI0NSwwLjA2LTAuNDU4LTAuMDMxLTAuNjQzYy0wLjA5Mi0wLjE4NC0wLjgyOS0xLjk4NC0xLjEzOC0yLjcxN2MtMC4zMDctMC43MzItMC42MTQtMC42MTEtMC44My0wLjYxMSBjLTAuMjE1LDAtMC40NjEtMC4wMy0wLjcwNy0wLjAzUzkuODk3LDguMjE1LDkuNTYsOC41ODJzLTEuMjkxLDEuMjUyLTEuMjkxLDMuMDU0YzAsMS44MDQsMS4zMjEsMy41NDMsMS41MDYsMy43ODcgYzAuMTg2LDAuMjQzLDIuNTU0LDQuMDYyLDYuMzA1LDUuNTI4YzMuNzUzLDEuNDY1LDMuNzUzLDAuOTc2LDQuNDI5LDAuOTE0YzAuNjc4LTAuMDYyLDIuMTg0LTAuODg1LDIuNDktMS43MzkgQzIzLjMwNywxOS4yNjgsMjMuMzA3LDE4LjUzMywyMy4yMTQsMTguMzh6Ij48L3BhdGg+PC9nPjwvZz48L3N2Zz4NCg=="
-                          alt="WhatsApp" width="20" height="20" style="display: block;">
-                      </a>
-                    </div>
+                    </p>
 
                     <!-- Contact Info -->
                     <p style="margin: 0 0 16px 0; color: #94a3b8; font-size: 14px;">
+                      <a href="https://wa.link/b3lr25" style="color: #2dd4bf; text-decoration: none;">
+                        WhatsApp
+                      </a><span style="margin: 0 8px; color: #64748b;">|</span>
+                      <a href="tel:+50242980332" style="color: #2dd4bf; text-decoration: none;">+502 4298 0332</a>
+                      <span style="margin: 0 8px; color: #64748b;">|</span>
                       <a href="mailto:luisefarfan.dev@gmail.com"
                         style="color: #2dd4bf; text-decoration: none;">luisefarfan.dev@gmail.com</a>
-                      <span style="margin: 0 8px; color: #64748b;">|</span>
-                      <a href="tel:+50242980332" style="color: #2dd4bf; text-decoration: none;">+502 4298 0332</a>
                     </p>
 
                     <!-- Footer Text -->
