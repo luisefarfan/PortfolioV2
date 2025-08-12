@@ -1,0 +1,147 @@
+---
+import LFIcon from '@components/svg/LFIcon.astro';
+
+interface Props {
+  lang: 'en' | 'es';
+}
+
+const { lang } = Astro.props;
+
+const navigation = {
+  en: [
+    { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Contact', href: '#contact' },
+  ],
+  es: [
+    { name: 'Inicio', href: '#home' },
+    { name: 'Acerca', href: '#about' },
+    { name: 'Experiencia', href: '#experience' },
+    { name: 'Proyectos', href: '#projects' },
+    { name: 'Habilidades', href: '#skills' },
+    { name: 'Contacto', href: '#contact' },
+  ],
+};
+---
+
+<header
+  class="lg:fixed sticky top-0 w-full bg-dark-900/80 backdrop-blur-md border-b border-dark-700 z-50"
+>
+  <nav class="container mx-auto lg:px-6 px-4">
+    <div class="flex items-center justify-between">
+      <a
+        href="/"
+        class="text-2xl font-bold text-primary-400 font-mono py-4 flex items-center gap-2"
+      >
+        <span class="w-12 block"><LFIcon /></span>
+        Luis Farfan
+      </a>
+
+      <div class="hidden lg:flex items-center space-x-8">
+        {
+          navigation[lang].map((item) => (
+            <a
+              href={item.href}
+              class="text-gray-300 hover:text-primary-400 transition-colors duration-200 font-medium py-4"
+            >
+              {item.name}
+            </a>
+          ))
+        }
+
+        <div class="flex items-center">
+          <a
+            href="/"
+            class:list={[
+              'text-sm px-4 py-4 text-gray-400',
+              {
+                'text-primary-400': lang === 'en',
+              },
+            ]}>EN</a
+          >
+          <span class="text-gray-600">|</span>
+          <a
+            href="/es"
+            class:list={[
+              'text-sm px-4 py-4 text-gray-400',
+              {
+                'text-primary-400': lang === 'es',
+              },
+            ]}>ES</a
+          >
+        </div>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button
+        class="lg:hidden py-4 px-2 cursor-pointer"
+        id="mobile-menu-toggle"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="lg:hidden hidden" id="mobile-menu">
+      <div class="pt-4 pb-2 space-y-2">
+        {
+          navigation[lang].map((item) => (
+            <a
+              href={item.href}
+              class="block px-3 py-2 text-gray-300 hover:text-primary-400 transition-colors"
+            >
+              {item.name}
+            </a>
+          ))
+        }
+
+        <div class="flex items-center justify-center space-x-1 text-lg">
+          <a
+            href="/"
+            class:list={[
+              'p-4 text-gray-400',
+              {
+                'text-primary-400': lang === 'en',
+              },
+            ]}>EN</a
+          >
+          <span class="text-gray-600">|</span>
+          <a
+            href="/es"
+            class:list={[
+              'p-4 text-gray-400',
+              {
+                'text-primary-400': lang === 'es',
+              },
+            ]}>ES</a
+          >
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (mobileMenuToggle && mobileMenu) {
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+</script>

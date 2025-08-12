@@ -1,0 +1,26 @@
+---
+interface Props {
+  direction?: 'down' | 'right' | 'up' | 'left';
+  class?: string;
+}
+
+const { direction = 'down', class: className } = Astro.props;
+
+// SVG paths for different arrow directions
+const paths = {
+  down: 'M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z',
+  right:
+    'M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z',
+  up: 'M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z',
+  left: 'M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z',
+};
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  class:list={['h-5 w-5', className]}
+  viewBox="0 0 20 20"
+  fill="currentColor"
+>
+  <path fill-rule="evenodd" d={paths[direction]} clip-rule="evenodd"></path>
+</svg>
