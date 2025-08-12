@@ -1,9 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import DownloadResumeButton from '@components/ui/DownloadResumeButton.astro';
 import { aboutContent, personalInfo } from '@constants/content';
-import { Image } from 'astro:assets';
-import profilePhoto from '@assets/images/profile.webp';
 import Arrow from '@components/svg/Arrow.astro';
+import { CDN_URL } from '@constants/index';
 
 interface Props {
   lang?: 'es' | 'en';
@@ -31,12 +31,13 @@ const resumeButton: { en: string; es: string } = {
       <!-- Photo placeholder -->
       <div class="flex justify-center lg:justify-start">
         <div
-          class="md:w-100 md:h-100 sm:w-[60%] w-[80%] bg-primary-400 rounded-xl p-[3px]"
+          class="md:w-100 md:h-100 sm:w-[60%] w-[80%] bg-primary-400 rounded-xl p-[3px] aspect-square"
         >
           <Image
-            src={profilePhoto}
+            src={`${CDN_URL}/images/profile.webp`}
             alt="Luis Farfan"
             class="w-full h-full aspect-square object-cover rounded-lg"
+            inferSize
           />
         </div>
       </div>

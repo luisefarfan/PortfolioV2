@@ -1,3 +1,5 @@
+import { CDN_URL } from "@constants/index";
+
 export interface PersonalInfo {
   name: string
   role: {
@@ -71,7 +73,7 @@ export const personalInfo: PersonalInfo = {
       es: 'https://wa.link/b3lr25'
     }
   },
-  resume: 'https://portfolio.luisefarfan.com/cv-en.pdf'
+  resume: `${CDN_URL}/cv-en.pdf`
 }
 
 export const aboutContent: AboutContent = {
