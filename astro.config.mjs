@@ -7,6 +7,8 @@ import vercel from '@astrojs/vercel';
 
 import db from '@astrojs/db';
 
+import sitemap from '@astrojs/sitemap';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.luisefarfan.com',
@@ -21,5 +23,5 @@ export default defineConfig({
   },
 
   adapter: vercel(),
-  integrations: [db()]
+  integrations: [db(), sitemap()]
 });
