@@ -228,6 +228,7 @@ const content = {
           </div>
 
           <button
+            id="contactFormSubmit"
             type="submit"
             class="w-full bg-primary-400 hover:bg-primary-500 text-dark-900 px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 cursor-pointer"
           >
@@ -249,9 +250,31 @@ const content = {
 <script>
   import { actions } from 'astro:actions';
 
+  const disableSubmitButton = (submitButton: HTMLButtonElement) => {
+    submitButton.disabled = true;
+    submitButton.classList.remove('hover:scale-105', 'cursor-pointer');
+    submitButton.classList.add('opacity-50', 'cursor-wait', 'hover:scale-100');
+  };
+
+  const enableSubmitButton = (submitButton: HTMLButtonElement) => {
+    submitButton.disabled = false;
+    submitButton.classList.remove(
+      'opacity-50',
+      'cursor-wait',
+      'hover:scale-100'
+    );
+    submitButton.classList.add('hover:scale-105', 'cursor-pointer');
+  };
+
   const form = document.getElementById('contactForm') as HTMLFormElement;
+  const submitButton = document.getElementById(
+    'contactFormSubmit'
+  ) as HTMLButtonElement;
+
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
+    disableSubmitButton(submitButton);
+
     const formData = new FormData(form);
     const values = Object.fromEntries(formData) as {
       name: string;
@@ -266,15 +289,15 @@ const content = {
       values['g-recaptcha-response'].trim() === ''
     ) {
       alert('Please complete the reCAPTCHA.');
+      enableSubmitButton(submitButton);
       return;
     }
 
     if (!values.name || !values.email || !values.message) {
       alert('Please fill in all fields.');
+      enableSubmitButton(submitButton);
       return;
     }
-
-    console.log('Form submitted:', values);
 
     try {
       const { data, error } = await actions.sendEmail(values);
@@ -293,12 +316,16 @@ const content = {
           );
         }
 
+        enableSubmitButton(submitButton);
+
         return;
       }
       alert('Message sent successfully!');
+      enableSubmitButton(submitButton);
     } catch (error) {
       console.error('Error sending message:', error);
       alert('Failed to send message. Please try again later.');
+      enableSubmitButton(submitButton);
     }
   });
 </script>
