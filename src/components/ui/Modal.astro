@@ -11,12 +11,14 @@ const { id, autoClose = false } = Astro.props;
 
 <dialog
   {id}
-  class="backdrop:bg-primary fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-transparent p-8 backdrop:opacity-50 lg:p-16"
+  class="backdrop:bg-dark-800 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-transparent p-8 backdrop:opacity-75 lg:p-16"
 >
-  <div class="shadow-proquimia relative rounded-xl bg-white p-8 lg:p-16">
+  <div
+    class="shadow-2xl relative rounded-xl bg-dark-800 border border-dark-700 p-8 lg:p-16 text-white"
+  >
     <button
       autofocus
-      class="absolute -top-6 right-0 w-4 cursor-pointer text-white lg:-top-10 lg:w-6"
+      class="absolute -top-6 right-0 w-4 cursor-pointer text-primary-400 hover:text-primary-300 transition-colors duration-200 lg:-top-10 lg:w-6"
       id={`${id}-close`}
       type="submit"
     >
