@@ -6,6 +6,15 @@ import { createAssessment } from "@lib/reCaptcha";
 import { REQUEST_CONTACT_ACTION } from "@constants/index";
 import { getEnAnswerEmail, getEsAnswerEmail } from "./emails/answerEmails";
 
+const errorMessages = {
+  en: {
+    recaptchaInvalid: "Invalid reCAPTCHA",
+  },
+  es: {
+    recaptchaInvalid: "reCAPTCHA no válido",
+  }
+}
+
 const getEmailMessage = (name: string, message: string, lang: 'en' | 'es'): string => {
   const emailMessages = {
     es: getEsAnswerEmail(name, message),
@@ -32,7 +41,7 @@ export const sendEmailAction = defineAction({
     });
 
     if (!valid) {
-      return { success: false, message: 'Invalid reCAPTCHA' };
+      return { success: false, message: errorMessages[lang].recaptchaInvalid };
     }
 
     try {
@@ -48,7 +57,7 @@ export const sendEmailAction = defineAction({
       })
 
       const emailPromise = resendClient.emails.send({
-        from: 'Luis Enrique Farfán Prado<info@luisefarfan.com>',
+        from: lang === 'en' ? 'Luis Enrique Farfán Prado<info@luisefarfan.com>' : 'Luis Enrique Farfan Prado<info@luisefarfan.com>',
         to: email,
         subject: lang === 'es' ? `Gracias por contactarme, ${name}! | Luis Farfán` : `Thank you for reaching out, ${name}! | Luis Farfan`,
         html: emailMessage
