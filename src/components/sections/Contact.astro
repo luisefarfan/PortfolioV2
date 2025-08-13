@@ -199,7 +199,7 @@ const content = {
               id="name"
               name="name"
               required
-              class="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent text-white placeholder-gray-400"
+              class="form-input w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent text-white placeholder-gray-400"
               placeholder={content[lang].form.name}
             />
           </div>
@@ -216,7 +216,7 @@ const content = {
               id="email"
               name="email"
               required
-              class="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent text-white placeholder-gray-400"
+              class="form-input w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent text-white placeholder-gray-400"
               placeholder={content[lang].form.email}
             />
           </div>
@@ -233,7 +233,7 @@ const content = {
               name="message"
               rows="5"
               required
-              class="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent text-white placeholder-gray-400 resize-none"
+              class="form-input w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent text-white placeholder-gray-400 resize-none"
               placeholder={content[lang].form.message}></textarea>
           </div>
 
@@ -371,6 +371,14 @@ const content = {
     errorDialog?.showModal();
   };
 
+  const clearForm = () => {
+    const formInputs = document.querySelectorAll('#contactForm .form-input');
+    console.log(formInputs);
+    formInputs.forEach((input) => {
+      (input as HTMLInputElement).value = '';
+    });
+  };
+
   const form = document.getElementById('contactForm') as HTMLFormElement;
   const submitButton = document.getElementById(
     'contactFormSubmit'
@@ -432,6 +440,7 @@ const content = {
 
       showSuccessMessage();
       enableSubmitButton(submitButton);
+      clearForm();
     } catch (error) {
       console.error('Error sending message:', error);
       // TODO: Add translated message
