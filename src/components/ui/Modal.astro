@@ -1,0 +1,60 @@
+---
+import Close from '@components/svg/Close.astro';
+
+interface Props {
+  id: string;
+  autoClose?: boolean;
+}
+
+const { id, autoClose = false } = Astro.props;
+---
+
+<dialog
+  {id}
+  class="backdrop:bg-primary fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-transparent p-8 backdrop:opacity-50 lg:p-16"
+>
+  <div class="shadow-proquimia relative rounded-xl bg-white p-8 lg:p-16">
+    <button
+      autofocus
+      class="absolute -top-6 right-0 w-4 cursor-pointer text-white lg:-top-10 lg:w-6"
+      id={`${id}-close`}
+      type="submit"
+    >
+      <Close />
+    </button>
+    <slot />
+  </div>
+</dialog>
+
+<script is:inline define:vars={{ id, autoClose }}>
+  const openButton = document.querySelector(`#${id}-open`);
+  const closeButton = document.querySelector(`#${id}-close`);
+
+  let timeout;
+
+  if (openButton) {
+    openButton.addEventListener('click', () => {
+      const dialog = document.querySelector(`#${id}`);
+      dialog.showModal();
+
+      if (autoClose === true) {
+        timeout = setTimeout(() => {
+          // Check if the user didn't closed the dialog before the timeout
+          if (dialog.open) {
+            console.log('Dialog autoclosed');
+            dialog.close();
+          }
+        }, 3000);
+      }
+    });
+  }
+
+  if (closeButton) {
+    closeButton.addEventListener('click', () => {
+      if (timeout) clearTimeout(timeout);
+
+      const dialog = document.querySelector(`#${id}`);
+      dialog.close();
+    });
+  }
+</script>

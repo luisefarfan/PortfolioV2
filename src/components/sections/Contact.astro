@@ -8,6 +8,7 @@ import Email from '@components/svg/Email.astro';
 import LinkedIn from '@components/svg/LinkedIn.astro';
 import GitHub from '@components/svg/GitHub.astro';
 import WhatsApp from '@components/svg/WhatsApp.astro';
+import Modal from '@components/ui/Modal.astro';
 
 interface Props {
   lang?: 'es' | 'en';
@@ -240,6 +241,17 @@ const content = {
   </div>
 </section>
 
+<Modal id="confirm-dialog" autoClose>
+  <main class="text-center">
+    <p class="mb-4">
+      ¡Solicitud <span class="text-accent">Enviada!</span>
+    </p>
+    <p class="mx-auto max-w-none lg:max-w-[35ch]">
+      Un experto se comunicará contigo a la brevedad posible
+    </p>
+  </main>
+</Modal>
+
 <script
   src="https://www.google.com/recaptcha/enterprise.js"
   is:inline
@@ -266,10 +278,22 @@ const content = {
     submitButton.classList.add('hover:scale-105', 'cursor-pointer');
   };
 
+  const showNotification = (dialog: HTMLDialogElement) => {
+    dialog?.showModal();
+
+    setTimeout(() => {
+      dialog?.close();
+    }, 3000);
+  };
+
   const form = document.getElementById('contactForm') as HTMLFormElement;
   const submitButton = document.getElementById(
     'contactFormSubmit'
   ) as HTMLButtonElement;
+
+  const confirmDialog = document.querySelector(
+    '#confirm-dialog'
+  ) as HTMLDialogElement;
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -320,7 +344,8 @@ const content = {
 
         return;
       }
-      alert('Message sent successfully!');
+
+      showNotification(confirmDialog);
       enableSubmitButton(submitButton);
     } catch (error) {
       console.error('Error sending message:', error);
