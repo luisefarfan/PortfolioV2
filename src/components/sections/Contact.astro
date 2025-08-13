@@ -34,6 +34,14 @@ const content = {
     },
     whatsAppMe: 'WhatsApp Me',
     resumeText: 'Interested in working together? Get my full resume:',
+    notifications: {
+      success: 'Message sent successfully!',
+      successContent:
+        "Thank you for reaching out! I'll get back to you as soon as possible.",
+      error: 'Oops! Something went wrong',
+      errorContent:
+        'There was an issue sending your message. Please try again or contact me directly.',
+    },
   },
   es: {
     subtitle: 'Trabajemos juntos',
@@ -47,6 +55,14 @@ const content = {
     },
     whatsAppMe: 'Envíame un WhatsApp',
     resumeText: '¿Interesado en trabajar juntos? Obtén mi Currículum completo:',
+    notifications: {
+      success: '¡Mensaje enviado exitosamente!',
+      successContent:
+        '¡Gracias por contactarme! Me pondré en contacto contigo lo antes posible.',
+      error: '¡Ups! Algo salió mal',
+      errorContent:
+        'Hubo un problema al enviar tu mensaje. Por favor intenta de nuevo o contáctame directamente.',
+    },
   },
 };
 ---
@@ -241,14 +257,67 @@ const content = {
   </div>
 </section>
 
-<Modal id="confirm-dialog" autoClose>
-  <main class="text-center">
-    <p class="mb-4">
-      ¡Solicitud <span class="text-accent">Enviada!</span>
-    </p>
-    <p class="mx-auto max-w-none lg:max-w-[35ch]">
-      Un experto se comunicará contigo a la brevedad posible
-    </p>
+<Modal id="success-dialog">
+  <main class="text-center space-y-6">
+    <div
+      class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto"
+    >
+      <svg
+        class="w-8 h-8 text-green-400"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 13l4 4L19 7"></path>
+      </svg>
+    </div>
+
+    <div class="space-y-3">
+      <h3 class="text-xl font-bold text-white">
+        {content[lang].notifications.success}
+      </h3>
+      <p class="text-gray-300 leading-relaxed max-w-sm mx-auto">
+        {content[lang].notifications.successContent}
+      </p>
+    </div>
+  </main>
+</Modal>
+
+<Modal id="error-dialog">
+  <main class="text-center space-y-6">
+    <div
+      class="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mx-auto"
+    >
+      <svg
+        class="w-8 h-8 text-red-400"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"
+        ></path>
+      </svg>
+    </div>
+
+    <div class="space-y-3">
+      <h3 class="text-xl font-bold text-white">
+        {content[lang].notifications.error}
+      </h3>
+      <p
+        id="error-message"
+        class="text-gray-300 leading-relaxed max-w-sm mx-auto"
+      >
+        {content[lang].notifications.errorContent}
+      </p>
+    </div>
   </main>
 </Modal>
 
@@ -278,22 +347,34 @@ const content = {
     submitButton.classList.add('hover:scale-105', 'cursor-pointer');
   };
 
-  const showNotification = (dialog: HTMLDialogElement) => {
-    dialog?.showModal();
+  const showSuccessMessage = () => {
+    const successDialog = document.querySelector(
+      '#success-dialog'
+    ) as HTMLDialogElement;
+    successDialog?.showModal();
 
     setTimeout(() => {
-      dialog?.close();
+      successDialog?.close();
     }, 3000);
+  };
+
+  const showErrorMessage = (message: string) => {
+    const errorDialog = document.querySelector(
+      '#error-dialog'
+    ) as HTMLDialogElement;
+    const errorContent = document.getElementById(
+      'error-message'
+    ) as HTMLElement;
+
+    errorContent.textContent = message;
+
+    errorDialog?.showModal();
   };
 
   const form = document.getElementById('contactForm') as HTMLFormElement;
   const submitButton = document.getElementById(
     'contactFormSubmit'
   ) as HTMLButtonElement;
-
-  const confirmDialog = document.querySelector(
-    '#confirm-dialog'
-  ) as HTMLDialogElement;
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -312,13 +393,15 @@ const content = {
       !values['g-recaptcha-response'] ||
       values['g-recaptcha-response'].trim() === ''
     ) {
-      alert('Please complete the reCAPTCHA.');
+      // TODO: Add translated message
+      showErrorMessage('Please complete the reCAPTCHA.');
       enableSubmitButton(submitButton);
       return;
     }
 
     if (!values.name || !values.email || !values.message) {
-      alert('Please fill in all fields.');
+      // TODO: Add translated message
+      showErrorMessage('Please fill in all fields.');
       enableSubmitButton(submitButton);
       return;
     }
@@ -329,13 +412,15 @@ const content = {
       if (error || !data.success) {
         if (error?.message) {
           console.error('Error sending message:', error.message);
-          alert(error.message);
+          // TODO: Make sure to receive translated message from action
+          showErrorMessage(error.message);
         } else {
           console.error(
             'Failed to send message:',
             data?.message || 'Unknown error'
           );
-          alert(
+          // TODO: Make sure to receive translated message from action
+          showErrorMessage(
             data?.message || 'Failed to send message. Please try again later.'
           );
         }
@@ -345,11 +430,12 @@ const content = {
         return;
       }
 
-      showNotification(confirmDialog);
+      showSuccessMessage();
       enableSubmitButton(submitButton);
     } catch (error) {
       console.error('Error sending message:', error);
-      alert('Failed to send message. Please try again later.');
+      // TODO: Add translated message
+      showErrorMessage('Failed to send message. Please try again later.');
       enableSubmitButton(submitButton);
     }
   });
