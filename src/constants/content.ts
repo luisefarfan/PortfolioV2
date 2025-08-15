@@ -45,7 +45,10 @@ export interface Experience {
 
 export interface Project {
   name: string
-  description: string
+  description: {
+    en: string
+    es: string
+  }
   technologies: string[]
   url?: string
   github?: string
@@ -163,45 +166,101 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [
   {
+    name: "Proquimia Industrial",
+    description: {
+      en: "Website and marketing campaign for pest control company in Guatemala",
+      es: "Sitio web y campaña de marketing para empresa de fumigación en Guatemala"
+    },
+    technologies: ["Astro", "TailwindCSS", "No-SQL", "Marketing", "Google Ads", "Vercel", "SEO"],
+    url: "https://www.proquimiaindustrial.com",
+  },
+  {
     name: "Mayacert S.A.",
-    description: "Corporate website for certification company",
-    technologies: ["Symfony", "TailwindCSS", "PostgreSQL"],
+    description: {
+      en: "Website with custom content management system for guatemalan certification company",
+      es: "Sitio web con sistema de gestión de contenido personalizado para empresa de certificación guatemalteca"
+    },
+    technologies: ["PHP", "Symfony", "TailwindCSS", "PostgreSQL", "Linux"],
     url: "https://www.mayacert.com",
   },
   {
+    name: "TELUS Support AI Tool",
+    description: {
+      en: "AI-powered support tool for TELUS customer service",
+      es: "Herramienta de soporte impulsada por IA para el servicio al cliente de TELUS"
+    },
+    technologies: ["Next.js", "React", "TypeScript", "Node.js", "Contentful", "AI"],
+    url: "https://www.telus.com/support/ai",
+  },
+  {
     name: "TELUS Support",
-    description: "Customer support platform for TELUS",
-    technologies: ["Next.js", "React 18", "Redux"],
+    description: {
+      en: "Customer support platform for TELUS",
+      es: "Plataforma de soporte al cliente para TELUS"
+    },
+    technologies: ["Next.js", "React", "Redux", "TypeScript", "Node.js", "Contentful", "GCP"],
     url: "https://www.telus.com/support",
   },
   {
+    name: "TELUS Business Requests",
+    description: {
+      en: "TELUS B2B Customer platform to create requests and complaints",
+      es: "Plataforma B2B de TELUS para crear solicitudes y quejas"
+    },
+    technologies: ["Next.js", "React", "Redux", "TypeScript", "Node.js", "Contentful", "GCP"],
+    url: "https://www.telus.com/business/my-telus/support-requests",
+  },
+  {
+    name: "MyTELUS App - Support",
+    description: {
+      en: "App version of the TELUS Support website",
+      es: "Versión móvil del sitio web de soporte de TELUS"
+    },
+    technologies: ["Expo", "React Native", "Tanstack Query", "TypeScript", "Node.js", "Contentful", "Firebase"]
+  },
+  {
     name: "Koleyo",
-    description: "Educational management system",
-    technologies: ["React", "Node.js", "PostgreSQL"],
+    description: {
+      en: "Educational management system",
+      es: "Sistema de gestión educativa"
+    },
+    technologies: ["React", "Node.js", "PostgreSQL", "Symfony", "PHP"],
     url: "https://www.koleyo.com",
   },
   {
     name: "Priscilla Bianchi",
-    description: "Artist e-commerce site",
-    technologies: ["Next.js", "Stripe", "TailwindCSS"],
+    description: {
+      en: "Guatemalan artist e-commerce site",
+      es: "Sitio de comercio electrónico para una artista guatemalteca"
+    },
+    technologies: ["PostgreSQL", "Symfony", "PHP"],
     url: "https://www.priscillabianchi.net",
   },
   {
     name: "Carolina Mendez",
-    description: "Wedding planner landing page",
-    technologies: ["React", "TailwindCSS", "Framer Motion"],
+    description: {
+      en: "Wedding planner landing page",
+      es: "Página web para planificadora de bodas"
+    },
+    technologies: ["PostgreSQL", "Symfony", "PHP"],
     url: "https://www.carolinamendez.com.gt",
   },
   {
     name: "Servpresa",
-    description: "Industrial security company site",
-    technologies: ["Next.js", "TailwindCSS", "PostgreSQL"],
+    description: {
+      en: "Industrial security company site",
+      es: "Sitio web de empresa de seguridad industrial"
+    },
+    technologies: ["PostgreSQL", "Symfony", "PHP"],
     url: "https://www.servpresa.com.gt",
   },
   {
     name: "Squadra",
-    description: "HR company landing page",
-    technologies: ["React", "TailwindCSS", "Node.js"],
+    description: {
+      en: "HR company landing page",
+      es: "Página web para empresa de recursos humanos"
+    },
+    technologies: ["HTML", "CSS"],
     url: "https://www.squadra.com.gt",
   },
 ]
