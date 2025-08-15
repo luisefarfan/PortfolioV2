@@ -32,8 +32,14 @@ export interface AboutContent {
 export interface Experience {
   company: string
   period: string
-  role: string
-  description: string
+  role: {
+    en: string
+    es: string
+  }
+  description: {
+    en: string
+    es: string
+  }
   technologies?: string[]
 }
 
@@ -87,27 +93,70 @@ Trabajo con tecnologías como React, Node.js, Astro y Next.js, y he liderado el 
 
 export const experiences: Experience[] = [
   {
-    company: "TELUS International",
-    period: "2022 - Today",
-    role: "Fullstack Developer",
+    company: "TELUS Digital",
+    period: "2024 - Today",
+    role: {
+      en: "Technical Lead",
+      es: "Líder Técnico"
+    },
     description:
-      "Fullstack Developer using React.js, Express.js and Next.js. Maintaining TELUS Support page, leading projects and bug fixes. Major project: complete migration from React v12 to NextJS with React v18.",
-    technologies: ["React.js", "Express.js", "Next.js", "React 18"],
+    {
+      en: "Leading a cross-functional team responsible for the TELUS Support web platform (Next.js/TypeScript), a B2B ticketing system, and the TELUS Support React Native app. Own software & cloud architecture (GCP), review pull requests, drive code quality (SOLID, Clean Code), pair program, optimize performance, and oversee CI/CD (GitHub Actions), infrastructure & DevOps (Docker, Redis). Coordinate with Content Managers using Contentful to deliver scalable, content-driven features.",
+      es: "Liderando un equipo multidisciplinario encargado de la plataforma web TELUS Support (Next.js/TypeScript), el sistema de tickets B2B y la app móvil TELUS Support en React Native. Responsable de arquitectura de software y nube (GCP), revisión de pull requests, calidad de código (SOLID, Clean Code), pair programming, optimización de rendimiento y administración de CI/CD (GitHub Actions), infraestructura y DevOps (Docker, Redis). Coordinación con Content Managers usando Contentful para entregar funcionalidades escalables orientadas a contenido."
+    },
+    technologies: ["Next.js", "TypeScript", "GCP", "Software Architecture", "GitHub Actions", "Redis", "Docker", "Contentful", "Leadership", "Product Management"],
+  },
+  {
+    company: "TELUS Digital",
+    period: "2023 - 2024",
+    role: {
+      en: "Senior Fullstack Developer",
+      es: "Desarrollador Fullstack Senior"
+    },
+    description:
+    {
+      en: "Led feature delivery across TELUS Support platform, B2B ticketing system and early stages of the React Native Support app. Mentored junior developers, led medium-sized projects end-to-end, enforced engineering standards (SOLID, DRY, Clean Code).",
+      es: "Lideré la entrega de funcionalidades para la plataforma TELUS Support, el sistema de tickets B2B y las primeras etapas de la app de React Native. Apoyé a desarrolladores junior, dirigí proyectos medianos por completo, promoví estándares de ingeniería (SOLID, DRY, Clean Code)."
+    },
+    technologies: ["Next.js", "TypeScript", "React Native", "Express.js", "Redis", "Docker", "Contentful", "Mentorship", "GitHub Actions"],
+  },
+  {
+    company: "TELUS Digital",
+    period: "2022 - 2023",
+    role: {
+      en: "Fullstack Developer",
+      es: "Desarrollador Fullstack"
+    },
+    description: {
+      en: "Implemented new user-facing features and backend APIs for the TELUS Support site. Fixed bugs, wrote tests, improved performance, integrated Contentful content models, and introduced incremental quality improvements.",
+      es: "Implementé nuevas funcionalidades de cara al usuario y APIs para el sitio de TELUS Support. Corregí bugs, escribí pruebas, mejoré rendimiento, integré modelos de contenido de Contentful, e introduje mejoras para mejorar la calidad del código."
+    },
+    technologies: ["Next.js", "TypeScript", "React", "Express.js", "Redis", "Contentful", "Docker", "Redux"],
   },
   {
     company: "Homeland S.A.",
     period: "2019 - 2021",
-    role: "Fullstack Web Developer",
-    description:
-      "Fullstack Web Developer using Symfony, HTML, Javascript, CSS, React, Docker and SQL. Worked on 2 large projects from requirements gathering to deployment.",
+    role: {
+      en: "Fullstack Web Developer",
+      es: "Desarrollador Web Fullstack"
+    },
+    description: {
+      en: "Fullstack Web Developer using Symfony, HTML, Javascript, CSS, React, Docker and SQL. Worked on 2 large projects from requirements gathering, database design, to deployment.",
+      es: "Desarrollador Web Fullstack utilizando Symfony, HTML, Javascript, CSS, React, Docker y SQL. Trabajé en 2 grandes proyectos desde la recopilación de requerimientos, diseño de base de datos, hasta la implementación."
+    },
     technologies: ["Symfony", "HTML", "JavaScript", "CSS", "React", "Docker", "SQL"],
   },
   {
     company: "Freelance",
     period: "2019 - Present",
-    role: "Full-Stack Developer",
-    description:
-      "Multiple web application projects for private companies and small businesses, handling the complete development lifecycle.",
+    role: {
+      en: "Full-Stack Developer",
+      es: "Desarrollador Full-Stack"
+    },
+    description: {
+      en: "I have worked on multiple web application projects for private companies and small businesses, handling the complete development lifecycle.",
+      es: "He trabajado en múltiples proyectos de aplicaciones web para empresas privadas y pequeñas empresas, gestionando todo el ciclo de vida del desarrollo."
+    },
     technologies: ["Various"],
   },
 ]

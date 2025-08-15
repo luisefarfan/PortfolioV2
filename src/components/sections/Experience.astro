@@ -36,11 +36,11 @@ const sectionTitle: { en: string; es: string } = {
                 </div>
 
                 <h4 class="text-lg font-semibold text-primary-400 mb-3">
-                  {exp.role}
+                  {exp.role[lang]}
                 </h4>
 
                 <p class="text-gray-300 mb-4 leading-relaxed">
-                  {exp.description}
+                  {exp.description[lang]}
                 </p>
 
                 {exp.technologies && (
