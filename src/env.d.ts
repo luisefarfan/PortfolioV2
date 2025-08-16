@@ -9,6 +9,9 @@ interface ImportMetaEnv {
   readonly RECAPTCHA_SERVICE_ACCOUNT_CLIENT_ID: string;
   readonly ASTRO_DB_REMOTE_URL: string;
   readonly ASTRO_DB_APP_TOKEN: string;
+  readonly N8N_WEBHOOK_USER: string;
+  readonly N8N_WEBHOOK_PASSWORD: string;
+  readonly N8N_WEBHOOK_URL: string;
 }
 
 interface ImportMeta {

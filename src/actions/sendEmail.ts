@@ -63,7 +63,25 @@ export const sendEmailAction = defineAction({
         html: emailMessage
       })
 
-      const [dbResponse, emailResponse] = await Promise.all([dbPromise, emailPromise])
+      const notificationPromise = fetch(import.meta.env.N8N_WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Basic ${btoa(`${import.meta.env.N8N_WEBHOOK_USER}:${import.meta.env.N8N_WEBHOOK_PASSWORD}`)}`
+        },
+        body: JSON.stringify({
+          email: email,
+          name: name,
+          message: message,
+          lang: lang
+        })
+      })
+
+      const [dbResponse, emailResponse, notificationResponse] = await Promise.all([dbPromise, emailPromise, notificationPromise])
+
+      if (notificationResponse.status !== 200 || !notificationResponse.ok) {
+        console.error('Error sending notification to n8n:', notificationResponse.statusText)
+      }
 
       console.log('Contact request stored in database with ID:', dbResponse.toJSON().lastInsertRowid)
 
