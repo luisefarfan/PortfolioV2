@@ -2,6 +2,7 @@ import { ContactInformation, db } from "astro:db";
 import { defineAction } from "astro:actions";
 import { z } from 'astro:schema';
 import { Resend } from "resend";
+import { WebClient } from '@slack/web-api';
 import { createAssessment } from "@lib/reCaptcha";
 import { REQUEST_CONTACT_ACTION } from "@constants/index";
 import { getEnAnswerEmail, getEsAnswerEmail } from "./emails/answerEmails";
@@ -13,6 +14,32 @@ const errorMessages = {
   es: {
     recaptchaInvalid: "reCAPTCHA no válido",
   }
+}
+
+const getSlackNotificationBlocks = (name: string, email: string, message: string, lang: 'en' | 'es') => {
+  return [
+    {
+      "type": "section",
+      "text": {
+        "type": "plain_text",
+        "emoji": true,
+        "text": "Nueva solicitud de contacto desde luisefarfan.com"
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": `*<mailto:${email}|${name}>*\nMensaje: ${message}\nEmail: ${email}\nLenguaje: ${lang}`
+      }
+    },
+    {
+      "type": "divider"
+    }
+  ]
 }
 
 const getEmailMessage = (name: string, message: string, lang: 'en' | 'es'): string => {
@@ -63,35 +90,39 @@ export const sendEmailAction = defineAction({
         html: emailMessage
       })
 
-      const notificationPromise = fetch(import.meta.env.N8N_WEBHOOK_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Basic ${btoa(`${import.meta.env.N8N_WEBHOOK_USER}:${import.meta.env.N8N_WEBHOOK_PASSWORD}`)}`
-        },
-        body: JSON.stringify({
-          email: email,
-          name: name,
-          message: message,
-          lang: lang
-        })
+      const slackClient = new WebClient(import.meta.env.SLACK_TOKEN);
+
+      const notificationPromise = slackClient.chat.postMessage({
+        blocks: getSlackNotificationBlocks(name, email, message, lang),
+        channel: '#notificaciones-portafolio',
+        text: `Nueva solicitud de contacto desde luisefarfan.com: ${name} - ${email}`
       })
 
-      const [dbResponse, emailResponse, notificationResponse] = await Promise.all([dbPromise, emailPromise, notificationPromise])
+      const [dbResponse, emailResponse, notificationResponse] = await Promise.allSettled([dbPromise, emailPromise, notificationPromise])
 
-      if (notificationResponse.status !== 200 || !notificationResponse.ok) {
-        console.error('Error sending notification to n8n:', notificationResponse.statusText)
+      if (notificationResponse.status === 'fulfilled') {
+        console.log('Notification sent to slack successfully:', notificationResponse.value)
+      } else {
+        console.error('Error sending notification to slack:', notificationResponse.reason)
       }
 
-      console.log('Contact request stored in database with ID:', dbResponse.toJSON().lastInsertRowid)
-
-      const { data, error } = emailResponse
-
-      if (error) {
-        console.error("Resend error sending email:", error);
+      if (dbResponse.status === 'fulfilled') {
+        console.log('Contact request stored in database with ID:', dbResponse.value.lastInsertRowid)
+      } else {
+        console.error('Error storing contact request in database:', dbResponse.reason)
       }
 
-      console.log("Email sent successfully:", data);
+      if (emailResponse.status === 'fulfilled') {
+        const { data, error } = emailResponse.value
+
+        if (error) {
+          console.error("Resend error sending email:", error);
+        }
+
+        console.log('Email sent successfully:', data)
+      } else {
+        console.error('Error sending email:', emailResponse.reason)
+      }
 
       return {
         success: true,
