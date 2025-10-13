@@ -15,7 +15,6 @@ export const createAssessment = async (token: string, remoteip: string = 'unknow
     });
 
     const result = await response.json();
-    console.log('Turnstile validation result:', result);
     return { valid: result.success || false };
   } catch (error) {
     console.error('Turnstile validation error:', error);
