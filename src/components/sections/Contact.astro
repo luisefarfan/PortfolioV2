@@ -238,16 +238,21 @@ const content = {
           </div>
 
           <div
-            class="g-recaptcha"
-            data-sitekey={import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY}
-            data-action={REQUEST_CONTACT_ACTION}
+            class="cf-turnstile"
+            data-sitekey={import.meta.env.TURNSTILE_SITE_KEY}
+            data-theme="dark"
+            data-size="normal"
+            data-callback="onTurnstileSuccess"
+            data-error-callback="onTurnstileError"
+            data-expired-callback="onTurnstileExpired"
           >
           </div>
 
           <button
             id="contactFormSubmit"
             type="submit"
-            class="w-full bg-primary-400 hover:bg-primary-500 text-dark-900 px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 cursor-pointer"
+            disabled
+            class="w-full bg-primary-400 hover:bg-primary-500 text-dark-900 px-8 py-3 rounded-lg font-semibold transition-all duration-200 opacity-50"
           >
             {content[lang].form.send}
           </button>
@@ -322,11 +327,40 @@ const content = {
 </Modal>
 
 <script
-  src="https://www.google.com/recaptcha/enterprise.js"
+  src="https://challenges.cloudflare.com/turnstile/v0/api.js"
   is:inline
   async
   defer
   data-astro-rerun></script>
+
+<script is:inline>
+  const submitButton = document.getElementById('contactFormSubmit');
+
+  const enableSubmitButton = (submitButton) => {
+    submitButton.disabled = false;
+    submitButton.classList.remove('opacity-50', 'hover:scale-100');
+    submitButton.classList.add('hover:scale-105', 'cursor-pointer');
+  };
+
+  const disableSubmitButton = (submitButton) => {
+    submitButton.disabled = true;
+    submitButton.classList.remove('hover:scale-105', 'cursor-pointer');
+    submitButton.classList.add('opacity-50', 'hover:scale-100');
+  };
+
+  function onTurnstileSuccess() {
+    enableSubmitButton(submitButton);
+  }
+
+  function onTurnstileError(errorCode) {
+    console.error('Turnstile error:', errorCode);
+    disableSubmitButton(submitButton);
+  }
+  function onTurnstileExpired() {
+    console.warn('Turnstile token expired');
+    disableSubmitButton(submitButton);
+  }
+</script>
 
 <script>
   import { actions } from 'astro:actions';
@@ -394,12 +428,12 @@ const content = {
       email: string;
       message: string;
       lang: 'en' | 'es';
-      'g-recaptcha-response': string;
+      'cf-turnstile-response': string;
     };
 
     if (
-      !values['g-recaptcha-response'] ||
-      values['g-recaptcha-response'].trim() === ''
+      !values['cf-turnstile-response'] ||
+      values['cf-turnstile-response'].trim() === ''
     ) {
       // TODO: Add translated message
       showErrorMessage('Please complete the reCAPTCHA.');

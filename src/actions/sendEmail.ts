@@ -3,8 +3,7 @@ import { defineAction } from "astro:actions";
 import { z } from 'astro:schema';
 import { Resend } from "resend";
 import { WebClient } from '@slack/web-api';
-import { createAssessment } from "@lib/reCaptcha";
-import { REQUEST_CONTACT_ACTION } from "@constants/index";
+import { createAssessment } from "@lib/turnstile";
 import { getEnAnswerEmail, getEsAnswerEmail } from "./emails/answerEmails";
 
 const errorMessages = {
@@ -57,15 +56,16 @@ export const sendEmailAction = defineAction({
     email: z.string().email("Invalid email address"),
     message: z.string().min(1, "Message is required"),
     lang: z.literal('es').or(z.literal('en')),
-    'g-recaptcha-response': z.string().min(1, "reCAPTCHA token is required")
+    'cf-turnstile-response': z.string().min(1, "reCAPTCHA token is required")
   }),
-  handler: async (input) => {
-    const { name, email, message, lang, 'g-recaptcha-response': recaptchaResponse } = input;
+  handler: async (input, request) => {
+    const { name, email, message, lang, 'cf-turnstile-response': recaptchaResponse } = input;
 
-    const { valid } = await createAssessment({
-      token: recaptchaResponse,
-      recaptchaAction: REQUEST_CONTACT_ACTION,
-    });
+    const ip = request.request.headers.get('CF-Connecting-IP') ||
+      request.request.headers.get('X-Forwarded-For') ||
+      'unknown';
+
+    const { valid } = await createAssessment(recaptchaResponse, ip);
 
     if (!valid) {
       return { success: false, message: errorMessages[lang].recaptchaInvalid };
