@@ -17,7 +17,7 @@
     "@slack/web-api": "^7.9.3",
     "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.14.4",
-    "resend": "^4.7.0",
+    "resend": "^6.1.2",
     "tailwindcss": "^4.1.11"
   }
 }
